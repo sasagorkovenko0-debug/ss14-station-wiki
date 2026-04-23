@@ -7,22 +7,23 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="space-background">
+        <div class="stars"></div>
+        <div class="twinkling"></div>
+        <div class="nebula"></div>
+    </div>
+
     <header>
         <h1><span class="glitch-text">NovaCurse</span> Wiki</h1>
         <p>Информационный хаб станции</p>
     </header>
 
-    <div class="burger-nav">
-        <div class="burger-icon">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
+    <div class="container">
         <aside class="sidebar">
             <div class="menu-section">
                 <h3>Навигация</h3>
                 <ul>
-                    <li><a href="#">Главная</a></li>
+                    <li><a href="index.html">Главная</a></li>
                     <li><a href="#">Механики</a></li>
                     <li><a href="#">Профессии</a></li>
                     <li><a href="#">Физика</a></li>
@@ -37,63 +38,36 @@
                 </ul>
             </div>
         </aside>
+
+        <main class="content">
+            <h2 class="main-title">База данных объектов</h2>
+            <div class="nav-grid">
+                <a href="#" class="nav-card">
+                    <div class="card-icon">⚖️</div>
+                    <h3>Корпоративный закон</h3>
+                    <span>Протоколы задержания и кодексы</span>
+                </a>
+                <a href="#" class="nav-card">
+                    <div class="card-icon">👥</div>
+                    <h3>Роли и отделы</h3>
+                    <span>Список профессий и их обязанности</span>
+                </a>
+                <a href="#" class="nav-card">
+                    <div class="card-icon">📜</div>
+                    <h3>Правила SRP</h3>
+                    <span>Основы ролевого взаимодействия</span>
+                </a>
+                <a href="#" class="nav-card">
+                    <div class="card-icon">🧪</div>
+                    <h3>Механики</h3>
+                    <span>Химия, Атмос и Строительство</span>
+                </a>
+            </div>
+        </main>
     </div>
 
-    <main class="content">
-        <section class="info-block">
-            <h2 class="section-title">Standard Roleplay (SRP)</h2>
-            <div class="card-grid">
-                <div class="card">
-                    <h3>Основы RP</h3>
-                    <p>Ваш персонаж — отдельная личность со своими страхами и обязанностями. Запрещено использование мета-информации (то, что знаете вы, но не знает персонаж).</p>
-                </div>
-                <div class="card">
-                    <h3>Взаимодействие</h3>
-                    <p>Любой конфликт должен иметь вескую причину. Антагонисты должны создавать интересные ситуации, а не просто "геноцидить" станцию.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="info-block">
-            <h2 class="section-title">Корпоративный закон</h2>
-            <div class="law-table">
-                <div class="law-item low">
-                    <strong>Мелкие нарушения:</strong> Оскорбления, мелкая кража, хулиганство. <em>Срок: 2-5 минут.</em>
-                </div>
-                <div class="law-item medium">
-                    <strong>Средние нарушения:</strong> Нападение, кража тех. оборудования, ношение оружия без лицензии. <em>Срок: 5-10 минут.</em>
-                </div>
-                <div class="law-item high">
-                    <strong>Тяжкие преступления:</strong> Убийство, саботаж критических систем, предательство. <em>Срок: Пожизненно/Казнь.</em>
-                </div>
-            </div>
-        </section>
-
-        <section class="info-block">
-            <h2 class="section-title">Роли и отделы</h2>
-            <div class="card-grid">
-                <div class="card">
-                    <h3 class="dept-cmd">Командование</h3>
-                    <p>Капитан, Главы отделов. Ответственность за жизни экипажа и сохранность станции.</p>
-                </div>
-                <div class="card">
-                    <h3 class="dept-sec">Безопасность</h3>
-                    <p>Офицеры, ГСБ, Детектив. Поддержание порядка и исполнение Корпоративного закона.</p>
-                </div>
-                <div class="card">
-                    <h3 class="dept-med">Медицинский</h3>
-                    <p>Врачи, Химики. Лечение травм, реанимация и борьба с вирусами.</p>
-                </div>
-                <div class="card">
-                    <h3 class="dept-eng">Инженерный</h3>
-                    <p>Инженеры, Атмосферные техники. Настройка двигателя, подача энергии и ремонт проломов.</p>
-                </div>
-            </div>
-        </section>
-    </main>
-
     <footer>
-        <p>&copy; 2026 NovaCurse Project | Данные синхронизированы</p>
+        <p>&copy; 2026 NovaCurse Project | Терминал активен</p>
     </footer>
 </body>
 </html>
