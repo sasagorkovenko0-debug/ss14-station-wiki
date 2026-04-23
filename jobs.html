@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профессии | NovaCurse</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="space"><div class="stars"></div></div>
+    
+    <div class="menu-trigger" onclick="toggleMenu()">☰ МЕНЮ</div>
+    <aside class="sidebar" id="sidebar">
+        <div class="close-btn" onclick="toggleMenu()">×</div>
+        <div class="menu-section">
+            <h3>Навигация</h3>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="laws.html">Коды и Закон</a></li>
+                <li><a href="jobs.html">Профессии</a></li>
+                <li><a href="srp.html">СРП Отделов</a></li>
+            </ul>
+        </div>
+    </aside>
+
+    <header>
+        <h1 class="aesthetic-title">Персонал <span class="red-glow">Станции</span></h1>
+        <p>Кадровый состав и доступные должности</p>
+    </header>
+
+    <main class="content-wrapper">
+        
+        <section class="dept-section">
+            <h2 class="dept-title dept-cc">Центральное Командование</h2>
+            <div class="job-grid">
+                <div class="job-card">
+                    <div class="job-portrait">Вставить скриншот</div>
+                    <h3>Представитель ЦК</h3>
+                    <p>Следит за работой Капитана.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="dept-section">
+            <h2 class="dept-title dept-cmd">Командование</h2>
+            <div class="job-grid">
+                <div class="job-card">
+                    <div class="job-portrait">Вставить скриншот</div>
+                    <h3>Капитан</h3>
+                    <p>Глава станции.</p>
+                </div>
+                <div class="job-card">
+                    <div class="job-portrait">Вставить скриншот</div>
+                    <h3>Глава Персонала (ГП)</h3>
+                    <p>Заведует ID-картами и сервисом.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="dept-section">
+            <h2 class="dept-title dept-sec">Служба Безопасности</h2>
+            <div class="job-grid">
+                <div class="job-card">
+                    <div class="job-portrait">Вставить скриншот</div>
+                    <h3>Глава СБ (ГСБ)</h3>
+                    <p>Руководит охраной.</p>
+                </div>
+                <div class="job-card">
+                    <div class="job-portrait">Вставить скриншот</div>
+                    <h3>Офицер</h3>
+                    <p>Патрулирует станцию.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="dept-section">
+            <h2 class="dept-title dept-eng">Инженерный Отдел</h2>
+            <div class="job-grid">
+                <div class="job-card">
+                    <div class="job-portrait">Вставить скриншот</div>
+                    <h3>Старший Инженер</h3>
+                    <p>Заведует двигателем.</p>
+                </div>
+                <div class="job-card">
+                    <div class="job-portrait">Вставить скриншот</div>
+                    <h3>Атмосферный Техник</h3>
+                    <p>Отвечает за воздух и трубы.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="dept-section">
+            <h2 class="dept-title dept-sup">Отдел Снабжения</h2>
+            <div class="job-grid">
+                <div class="job-card">
+                    <div class="job-portrait">Вставить скриншот</div>
+                    <h3>Квартирмейстер (КМ)</h3>
+                    <p>Заказывает грузы.</p>
+                </div>
+                <div class="job-card">
+                    <div class="job-portrait">Вставить скриншот</div>
+                    <h3>Шахтер</h3>
+                    <p>Добывает руду на астероиде.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="dept-section">
+            <h2 class="dept-title dept-synth">Синтетики (ИИ и Киборги)</h2>
+            <div class="job-grid">
+                <div class="job-card">
+                    <div class="job-portrait">Вставить скриншот</div>
+                    <h3>ИИ Станции</h3>
+                    <p>Контролирует двери и системы.</p>
+                </div>
+                <div class="job-card">
+                    <div class="job-portrait">Вставить скриншот</div>
+                    <h3>Киборг</h3>
+                    <p>Служит экипажу согласно законам.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script>function toggleMenu() { document.getElementById('sidebar').classList.toggle('active'); }</script>
+</body>
+</html>
