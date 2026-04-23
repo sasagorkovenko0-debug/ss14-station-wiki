@@ -2,13 +2,12 @@
 :root {
     --bg-color: #0b0e14;
     --card-bg: rgba(22, 27, 34, 0.9);
-    --sidebar-bg: rgba(20, 25, 35, 0.8);
+    --sidebar-bg: rgba(20, 25, 35, 0.95);
     --text-color: #c0c5ce;
     --accent-blue: #58a6ff;
     --accent-red: #f85149;
     --accent-green: #2ea043;
     --accent-yellow: #d29922;
-    --accent-purple: #a371f7;
     
     /* Цвета отделов */
     --cmd-color: #ffd700;
@@ -20,187 +19,153 @@
     --srv-color: #8cff66;
 }
 
-/* ОСНОВНЫЕ СТИЛИ */
+/* ОСНОВНОЙ ФОН И СБРОС ОТСТУПОВ */
+html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
 body {
     background-color: var(--bg-color);
+    /* Исправленный фон: фиксированный, чтобы не было пустых пятен при скролле */
     background-image: radial-gradient(circle at center, #1a1f2c 0%, #05070a 100%);
     background-attachment: fixed;
     color: var(--text-color);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
     line-height: 1.6;
-    overflow-x: hidden;
 }
 
-a {
-    color: var(--accent-blue);
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-a:hover {
-    color: #ffffff;
-    text-shadow: 0 0 5px var(--accent-blue);
-}
-
-/* ШАПКА И ЛОГОТИП */
+/* ШАПКА (Уменьшил отступы, чтобы убрать лишнее место) */
 header {
-    background: linear-gradient(180deg, #111424 0%, rgba(15, 17, 26, 0) 100%);
+    background: linear-gradient(180deg, rgba(17, 20, 36, 1) 0%, rgba(15, 17, 26, 0) 100%);
     text-align: center;
-    padding: 3rem 1rem;
+    padding: 1.5rem 1rem; /* Уменьшено с 3rem */
 }
 
 .glitch-text {
-    font-size: 3.5rem;
+    font-size: 2.5rem; /* Немного компактнее */
     font-weight: 800;
-    text-align: center;
-    background: linear-gradient(90deg, #4facfe 0%, #00f2fe 50%, #4facfe 100%);
+    background: linear-gradient(90deg, #4facfe, #00f2fe, #4facfe);
     background-size: 200% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 0 15px rgba(79, 172, 254, 0.6));
+    filter: drop-shadow(0 0 10px rgba(79, 172, 254, 0.4));
     animation: shine 3s linear infinite;
-    margin-bottom: 10px;
+    margin: 0;
 }
 
 @keyframes shine {
     to { background-position: 200% center; }
 }
 
-/* СЕТКА КОНТЕНТА */
+/* КОНТЕЙНЕР */
 .container {
     display: flex;
-    max-width: 1300px;
+    max-width: 1400px;
     margin: 0 auto;
-    padding: 20px;
-    gap: 30px;
+    padding: 0 20px 40px 20px; /* Убрал верхний padding, добавил боковой */
+    gap: 25px;
+    align-items: flex-start; /* Важно для работы sticky */
 }
 
+/* ИСПРАВЛЕНИЕ НАВИГАЦИИ (SIDEBAR) */
 .sidebar {
-    width: 250px;
+    width: 240px;
     background: var(--sidebar-bg);
     padding: 20px;
     border-radius: 12px;
     border: 1px solid #30363d;
-    height: fit-content;
+    
+    /* Sticky теперь будет работать корректно и не перекрывать всё */
     position: sticky;
-    top: 20px;
+    top: 20px; 
+    z-index: 10;
     flex-shrink: 0;
 }
 
-.sidebar h3 { 
-    color: #8b949e; 
-    font-size: 0.8rem; 
-    text-transform: uppercase; 
-    margin-bottom: 15px; 
-    letter-spacing: 1px;
+.menu-section {
+    margin-bottom: 20px;
 }
 
-.sidebar ul { list-style: none; padding: 0; }
-.sidebar li { margin-bottom: 12px; }
+.sidebar h3 {
+    color: #8b949e;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #30363d;
+    padding-bottom: 5px;
+}
 
-.main-content, .content {
+.sidebar ul { list-style: none; padding: 0; margin: 0; }
+.sidebar li { margin-bottom: 8px; }
+
+.sidebar a {
+    color: var(--accent-blue);
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.sidebar a:hover {
+    color: #fff;
+    text-shadow: 0 0 8px var(--accent-blue);
+}
+
+/* КОНТЕНТНАЯ ЧАСТЬ */
+.main-content {
     flex: 1;
+    min-width: 0; /* Предотвращает распирание гридов */
 }
 
-/* КАРТОЧКИ И СЕКЦИИ */
+/* КАРТОЧКИ */
 section, .card {
     background: var(--card-bg);
     border: 1px solid #30363d;
     border-radius: 10px;
-    padding: 25px;
-    margin-bottom: 25px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
 }
 
-h2 {
-    color: #fff;
-    border-bottom: 1px solid #333;
-    padding-bottom: 10px;
-    margin-top: 0;
-}
-
-/* КОДЫ УГРОЗЫ (details/summary) */
-.threat-card {
-    background: rgba(0, 0, 0, 0.2);
-    margin-bottom: 12px;
-    border-radius: 6px;
-    border-left: 5px solid #8b949e;
-    overflow: hidden;
-}
-
-.threat-card summary {
-    padding: 1rem;
-    font-weight: bold;
-    cursor: pointer;
-    user-select: none;
-    outline: none;
-    transition: 0.2s;
-}
-
-.threat-card summary:hover { background: rgba(255,255,255,0.05); }
-
-.threat-card.green { border-color: var(--accent-green); }
-.threat-card.blue { border-color: var(--accent-blue); }
-.threat-card.yellow { border-color: var(--accent-yellow); }
-.threat-card.red { border-color: var(--accent-red); }
-.threat-card.purple { border-color: var(--accent-purple); }
-
-/* ГРИДЫ (Законы и Роли) */
-.card-grid, .roles-grid {
+/* СЕТКИ РОЛЕЙ И ЗАКОНОВ */
+.roles-grid, .card-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
+    gap: 15px;
 }
 
-/* КАРТОЧКИ РОЛЕЙ */
-.role-card {
-    background: rgba(255, 255, 255, 0.03);
-    padding: 1.5rem;
-    border-radius: 8px;
-    border-top: 4px solid #8b949e;
-}
-
-.role-card h4 { margin: 0 0 10px 0; color: #fff; }
-.role-card p { font-size: 0.9rem; color: #8b949e; margin: 0; }
-
-.role-card.cmd { border-color: var(--cmd-color); }
-.role-card.sec { border-color: var(--sec-color); }
-.role-card.eng { border-color: var(--eng-color); }
-.role-card.med { border-color: var(--med-color); }
-.role-card.sci { border-color: var(--sci-color); }
-.role-card.cargo { border-color: var(--cargo-color); }
-.role-card.srv { border-color: var(--srv-color); }
-
-/* ЦВЕТОВОЙ ТЕКСТ */
-.text-green { color: var(--accent-green); font-weight: bold; }
-.text-blue { color: var(--accent-blue); font-weight: bold; }
-.text-red { color: var(--accent-red); font-weight: bold; }
+/* ЦВЕТА УГРОЗ (Исправление рамок) */
+.threat-card, .card { border-left: 4px solid transparent; }
+.green, .threat-green { border-left-color: var(--accent-green); }
+.blue, .threat-blue { border-left-color: var(--accent-blue); }
+.yellow, .threat-yellow { border-left-color: var(--accent-yellow); }
+.red, .threat-red { border-left-color: var(--accent-red); }
 
 /* КНОПКА МУЗЫКИ */
 .music-btn {
     position: fixed;
-    bottom: 25px;
-    right: 25px;
-    background: #1a1c29;
+    bottom: 20px;
+    right: 20px;
+    background: #161b22;
     color: #fff;
-    border: 2px solid var(--accent-blue);
-    padding: 12px 24px;
-    border-radius: 50px;
+    border: 1px solid var(--accent-blue);
+    padding: 8px 18px;
+    border-radius: 20px;
     cursor: pointer;
-    font-weight: bold;
-    z-index: 1000;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-    transition: 0.3s;
+    z-index: 100;
+    font-size: 0.85rem;
 }
 
-.music-btn:hover {
-    background: var(--accent-blue);
-    transform: translateY(-3px);
-}
-
-/* АДАПТИВНОСТЬ */
-@media (max-width: 900px) {
-    .container { flex-direction: column; }
-    .sidebar { width: 100%; position: relative; top: 0; }
+/* МОБИЛЬНАЯ АДАПТАЦИЯ */
+@media (max-width: 1000px) {
+    .container {
+        flex-direction: column;
+    }
+    .sidebar {
+        position: relative;
+        width: 100%;
+        top: 0;
+        box-sizing: border-box;
+    }
 }
