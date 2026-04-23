@@ -1,149 +1,69 @@
 body {
     background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
     color: #eee;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     margin: 0;
     min-height: 100vh;
     overflow-x: hidden;
+    line-height: 1.6;
 }
 
-/* ГЕНЕРАЦИЯ ЗВЕЗД (БЕЗ КАРТИНОК) */
-.space {
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    z-index: -1;
-}
+/* Космос на фоне */
+.space { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
+.stars { width: 2px; height: 2px; background: transparent; box-shadow: 444px 123px #FFF, 1200px 450px #FFF, 800px 900px #FFF, 200px 300px #FFF, 1500px 100px #FFF, 100px 800px #FFF; animation: animStar 50s linear infinite; }
+.stars:after { content: " "; position: absolute; top: 2000px; width: 2px; height: 2px; background: transparent; box-shadow: 444px 123px #FFF, 1200px 450px #FFF, 800px 900px #FFF, 200px 300px #FFF, 1500px 100px #FFF, 100px 800px #FFF; }
+@keyframes animStar { from { transform: translateY(0px); } to { transform: translateY(-2000px); } }
 
-.stars {
-  width: 2px; height: 2px;
-  background: transparent;
-  box-shadow: 444px 123px #FFF, 1200px 450px #FFF, 800px 900px #FFF, 200px 300px #FFF, 1500px 100px #FFF, 100px 800px #FFF;
-  animation: animStar 50s linear infinite;
-}
+/* Шапка и эстетичные заголовки */
+header { text-align: center; padding: 50px 20px 20px; }
+.glitch-text { font-size: 3em; font-weight: bold; animation: colorShift 4s infinite; text-shadow: 0 0 20px currentColor; }
+@keyframes colorShift { 0% { color: #ff3333; } 50% { color: #3388ff; } 100% { color: #ff3333; } }
 
-.stars:after {
-  content: " ";
-  position: absolute; top: 2000px; width: 2px; height: 2px;
-  background: transparent;
-  box-shadow: 444px 123px #FFF, 1200px 450px #FFF, 800px 900px #FFF, 200px 300px #FFF, 1500px 100px #FFF, 100px 800px #FFF;
-}
-
-@keyframes animStar {
-  from { transform: translateY(0px); }
-  to { transform: translateY(-2000px); }
-}
-
-/* ШАПКА */
-header {
-    text-align: center;
-    padding: 60px 20px;
-}
-
-.glitch-text {
+.aesthetic-title {
     font-size: 3em;
-    font-weight: bold;
-    animation: colorShift 4s infinite;
-    text-shadow: 0 0 20px currentColor;
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
 }
+.red-glow { color: #ff4d4d; text-shadow: 0 0 15px rgba(255, 77, 77, 0.6); font-weight: bold; }
 
-@keyframes colorShift {
-    0% { color: #ff3333; }
-    50% { color: #3388ff; }
-    100% { color: #ff3333; }
-}
-
-/* СКРЫТОЕ МЕНЮ */
-.menu-trigger {
-    position: fixed;
-    top: 20px; left: 20px;
-    background: rgba(0, 212, 255, 0.2);
-    padding: 10px 15px;
-    border: 1px solid #00d4ff;
-    cursor: pointer;
-    z-index: 100;
-    border-radius: 5px;
-}
-
-.sidebar {
-    position: fixed;
-    left: -280px; /* Спрятано */
-    top: 0; width: 250px; height: 100%;
-    background: rgba(10, 10, 20, 0.95);
-    border-right: 2px solid #00d4ff;
-    transition: 0.3s;
-    z-index: 1000;
-    padding: 40px 20px;
-}
-
+/* Скрытое меню */
+.menu-trigger { position: fixed; top: 20px; left: 20px; background: rgba(0, 212, 255, 0.1); padding: 10px 15px; border: 1px solid #00d4ff; cursor: pointer; z-index: 100; border-radius: 5px; transition: 0.3s; backdrop-filter: blur(5px); }
+.menu-trigger:hover { background: rgba(0, 212, 255, 0.3); }
+.sidebar { position: fixed; left: -280px; top: 0; width: 250px; height: 100%; background: rgba(10, 10, 20, 0.95); border-right: 2px solid #00d4ff; transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1); z-index: 1000; padding: 40px 20px; box-shadow: 5px 0 20px rgba(0,0,0,0.5); }
 .sidebar.active { left: 0; }
+.close-btn { position: absolute; top: 10px; right: 20px; font-size: 30px; cursor: pointer; color: #00d4ff; }
+.menu-section a { display: block; color: #00d4ff; text-decoration: none; padding: 12px 0; border-bottom: 1px solid #222; transition: 0.2s; }
+.menu-section a:hover { padding-left: 10px; color: #fff; border-bottom-color: #00d4ff; }
 
-.close-btn {
-    position: absolute;
-    top: 10px; right: 20px;
-    font-size: 30px; cursor: pointer; color: #00d4ff;
-}
+/* Контентные блоки */
+.content-wrapper { max-width: 1000px; margin: 0 auto; padding: 20px; background: rgba(20, 20, 30, 0.6); border-radius: 15px; border: 1px solid rgba(255,255,255,0.05); backdrop-filter: blur(10px); margin-bottom: 50px; }
 
-.menu-section a {
-    display: block; color: #00d4ff; text-decoration: none;
-    padding: 10px 0; border-bottom: 1px solid #222;
-}
+/* --- КОДЫ УГРОЗЫ --- */
+.alert-code { border-left: 5px solid; padding: 20px; margin: 20px 0; background: rgba(0, 0, 0, 0.4); border-radius: 0 10px 10px 0; }
+.alert-code h3 { margin-top: 0; display: flex; align-items: center; gap: 10px; }
+.code-green { border-color: #2ecc71; } .code-green h3 { color: #2ecc71; }
+.code-blue { border-color: #3498db; } .code-blue h3 { color: #3498db; }
+.code-yellow { border-color: #f1c40f; } .code-yellow h3 { color: #f1c40f; }
+.code-amber { border-color: #e67e22; } .code-amber h3 { color: #e67e22; }
+.code-red { border-color: #e74c3c; } .code-red h3 { color: #e74c3c; }
+.code-purple { border-color: #9b59b6; } .code-purple h3 { color: #9b59b6; }
 
-/* КНОПКИ НА ГЛАВНОЙ */
-.nav-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 20px;
-}
+/* --- ПРОФЕССИИ --- */
+.dept-section { margin-bottom: 50px; }
+.dept-title { border-bottom: 2px solid; padding-bottom: 10px; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; }
+.job-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; }
+.job-card { background: rgba(0,0,0,0.3); border: 1px solid #333; border-radius: 10px; padding: 15px; text-align: center; transition: 0.3s; }
+.job-card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.5); }
+/* Место под скриншот персонажа */
+.job-portrait { width: 100%; height: 200px; background: #111; border-radius: 8px; margin-bottom: 15px; display: flex; align-items: center; justify-content: center; color: #555; border: 1px dashed #444; font-size: 0.9em; }
 
-.nav-card {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid #333;
-    border-radius: 15px;
-    padding: 30px;
-    text-align: center;
-    text-decoration: none;
-    color: white;
-    transition: 0.3s;
-    backdrop-filter: blur(10px);
-}
-
-.nav-card:hover {
-    border-color: #00d4ff;
-    transform: translateY(-10px);
-    background: rgba(0, 212, 255, 0.1);
-}
-
-.card-icon { font-size: 3em; margin-bottom: 15px; }
-/* Стили для страницы законов */
-.content-laws {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-.law-category {
-    margin-bottom: 30px;
-    background: rgba(255, 255, 255, 0.03);
-    border-radius: 10px;
-    padding: 15px;
-    border: 1px solid #333;
-}
-
-.law-box ul {
-    list-style: none;
-    padding-left: 0;
-}
-
-.law-box li {
-    padding: 8px 15px;
-    margin: 5px 0;
-    background: rgba(0, 0, 0, 0.3);
-    border-radius: 4px;
-}
-
-.low-crime { color: #2ecc71; border-bottom: 2px solid #2ecc71; }
-.medium-crime { color: #3498db; border-bottom: 2px solid #3498db; }
-.high-crime { color: #e74c3c; border-bottom: 2px solid #e74c3c; }
+/* Цвета отделов */
+.dept-cmd { border-color: #f1c40f; color: #f1c40f; }
+.dept-sec { border-color: #e74c3c; color: #e74c3c; }
+.dept-eng { border-color: #e67e22; color: #e67e22; }
+.dept-srv { border-color: #2ecc71; color: #2ecc71; }
+.dept-sup { border-color: #d35400; color: #d35400; }
+.dept-cc { border-color: #00d4ff; color: #00d4ff; }
+.dept-synth { border-color: #ecf0f1; color: #ecf0f1; }
