@@ -1,52 +1,36 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NovaCurse Wiki | Главная</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
-<body>
-    <div class="space"><div class="stars"></div></div>
+<div class="container">
+    <div class="menu-trigger" onclick="toggleMenu()">☰ МЕНЮ</div>
 
-    <audio id="bg-music" loop>
-        <source src="https://cdn.pixabay.com/download/audio/2022/02/10/audio_fc86fae058.mp3" type="audio/mpeg">
-    </audio>
-    <button id="music-toggle" class="music-btn">
-        <i class="fas fa-volume-mute"></i> Музыка (Выкл)
-    </button>
+    <aside class="sidebar" id="sidebar">
+        <div class="close-btn" onclick="toggleMenu()">×</div>
+        <div class="menu-section">
+            <h3>Навигация</h3>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="laws.html">Коды и Закон</a></li>
+                <li><a href="jobs.html">Профессии</a></li>
+                <li><a href="srp.html">СРП Отделов</a></li>
+            </ul>
+        </div>
+    </aside>
 
-    <header>
-        <h1 class="glitch-text">NovaCurse Wiki</h1>
-        <p>Центральная база данных объектов и протоколов</p>
-    </header>
-
-    <div class="container">
-        <aside class="sidebar">
-            <div class="menu-section">
-                <h3>Навигация</h3>
-                <ul>
-                    <li><a href="index.html">🏠 Главная</a></li>
-                    <li><a href="laws.html">⚖️ Коды и Закон</a></li>
-                    <li><a href="srp.html">📜 СРП Отделов</a></li>
-                    <li><a href="jobs.html">🛠️ Профессии</a></li>
-                </ul>
-            </div>
-        </aside>
-
-        <main class="content">
-            <section class="card">
-                <h2>Добро пожаловать на борт!</h2>
-                <p>Это официальная база знаний станции <b>NovaCurse</b>. Здесь вы найдете все необходимые инструкции для выживания и работы в глубоком космосе.</p>
-                <p>Используйте меню слева, чтобы перейти в нужный раздел.</p>
-                <div style="margin-top: 20px; padding: 15px; background: rgba(88, 166, 255, 0.1); border-radius: 8px; border: 1px solid #58a6ff;">
-                    <b>Внимание:</b> Незнание Корпоративного Закона не освобождает от пребывания в Бриге!
-                </div>
-            </section>
-        </main>
-    </div>
-
-    <script src="script.js"></script>
-</body>
-</html>
+    <main class="main-content">
+        <div class="main-grid">
+            <a href="laws.html" class="grid-card">
+                <div class="card-icon">⚖️</div>
+                <h3>Корпоративный Закон</h3>
+                <p>Станьте примером для общества</p>
+            </a>
+            <a href="srp.html" class="grid-card">
+                <div class="card-icon">📋</div>
+                <h3>Стандартные Процедуры</h3>
+                <p>Повышайте качество своей работы</p>
+            </a>
+            <a href="jobs.html" class="grid-card">
+                <div class="card-icon">👥</div>
+                <h3>Роли и Профессии</h3>
+                <p>Реализуйте свой потенциал</p>
+            </a>
+        </div>
+    </main>
+</div>
