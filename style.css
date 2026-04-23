@@ -1,123 +1,119 @@
-/* Живой космос на фоне */
 body {
-    background: #020205;
-    color: #d1d1d1;
+    background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+    color: #eee;
     font-family: 'Segoe UI', sans-serif;
     margin: 0;
     min-height: 100vh;
     overflow-x: hidden;
 }
 
-.space-background {
+/* ГЕНЕРАЦИЯ ЗВЕЗД (БЕЗ КАРТИНОК) */
+.space {
     position: fixed;
     top: 0; left: 0; width: 100%; height: 100%;
     z-index: -1;
-    overflow: hidden;
 }
 
-.stars, .twinkling {
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    width: 100%; height: 100%; display: block;
-}
-
-/* Эффект мерцания звезд */
 .stars {
-    background: #000 url('https://i.imgur.com/Y77969X.png') repeat top center;
+  width: 2px; height: 2px;
+  background: transparent;
+  box-shadow: 444px 123px #FFF, 1200px 450px #FFF, 800px 900px #FFF, 200px 300px #FFF, 1500px 100px #FFF, 100px 800px #FFF;
+  animation: animStar 50s linear infinite;
 }
 
-.twinkling {
-    background: transparent url('https://i.imgur.com/0v7oZ99.png') repeat top center;
-    animation: move-twink-back 200s linear infinite;
+.stars:after {
+  content: " ";
+  position: absolute; top: 2000px; width: 2px; height: 2px;
+  background: transparent;
+  box-shadow: 444px 123px #FFF, 1200px 450px #FFF, 800px 900px #FFF, 200px 300px #FFF, 1500px 100px #FFF, 100px 800px #FFF;
 }
 
-@keyframes move-twink-back {
-    from { background-position: 0 0; }
-    to { background-position: -10000px 5000px; }
+@keyframes animStar {
+  from { transform: translateY(0px); }
+  to { transform: translateY(-2000px); }
 }
 
+/* ШАПКА */
 header {
-    background: rgba(18, 18, 28, 0.8);
-    padding: 20px;
     text-align: center;
-    border-bottom: 1px solid #333;
-    backdrop-filter: blur(5px);
+    padding: 60px 20px;
 }
 
 .glitch-text {
+    font-size: 3em;
     font-weight: bold;
-    animation: colorShift 5s infinite;
-    text-shadow: 0 0 15px currentColor;
+    animation: colorShift 4s infinite;
+    text-shadow: 0 0 20px currentColor;
 }
 
 @keyframes colorShift {
-    0% { color: #ff0000; }
-    33% { color: #0080ff; }
-    66% { color: #00ff80; }
-    100% { color: #ff0000; }
+    0% { color: #ff3333; }
+    50% { color: #3388ff; }
+    100% { color: #ff3333; }
 }
 
-.container {
-    display: flex;
-    max-width: 1200px;
-    margin: 30px auto;
-    gap: 30px;
+/* СКРЫТОЕ МЕНЮ */
+.menu-trigger {
+    position: fixed;
+    top: 20px; left: 20px;
+    background: rgba(0, 212, 255, 0.2);
+    padding: 10px 15px;
+    border: 1px solid #00d4ff;
+    cursor: pointer;
+    z-index: 100;
+    border-radius: 5px;
 }
 
-/* Навигация СЛЕВА */
 .sidebar {
-    width: 220px;
-    background: rgba(22, 22, 37, 0.9);
-    padding: 20px;
-    border-radius: 8px;
-    border: 1px solid #2a2a3a;
-    height: fit-content;
+    position: fixed;
+    left: -280px; /* Спрятано */
+    top: 0; width: 250px; height: 100%;
+    background: rgba(10, 10, 20, 0.95);
+    border-right: 2px solid #00d4ff;
+    transition: 0.3s;
+    z-index: 1000;
+    padding: 40px 20px;
 }
 
-.menu-section h3 {
-    color: #00d4ff;
-    font-size: 0.8em;
-    text-transform: uppercase;
-    margin-bottom: 10px;
+.sidebar.active { left: 0; }
+
+.close-btn {
+    position: absolute;
+    top: 10px; right: 20px;
+    font-size: 30px; cursor: pointer; color: #00d4ff;
 }
 
-.menu-section ul { list-style: none; padding: 0; margin-bottom: 20px; }
-.menu-section a { color: #aaa; text-decoration: none; display: block; padding: 5px 0; transition: 0.3s; }
-.menu-section a:hover { color: #fff; padding-left: 5px; }
+.menu-section a {
+    display: block; color: #00d4ff; text-decoration: none;
+    padding: 10px 0; border-bottom: 1px solid #222;
+}
 
-/* Сетка КНОПОК в центре */
-.content { flex: 1; }
-.main-title { border-bottom: 1px solid #333; padding-bottom: 10px; }
-
+/* КНОПКИ НА ГЛАВНОЙ */
 .nav-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 .nav-card {
-    background: rgba(26, 26, 46, 0.8);
+    background: rgba(255, 255, 255, 0.05);
     border: 1px solid #333;
-    padding: 25px;
-    border-radius: 10px;
-    text-decoration: none;
-    color: #fff;
+    border-radius: 15px;
+    padding: 30px;
     text-align: center;
-    transition: 0.4s;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+    backdrop-filter: blur(10px);
 }
 
 .nav-card:hover {
-    transform: translateY(-5px);
     border-color: #00d4ff;
-    box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
-    background: rgba(30, 30, 60, 0.9);
+    transform: translateY(-10px);
+    background: rgba(0, 212, 255, 0.1);
 }
 
-.card-icon { font-size: 2.5em; margin-bottom: 10px; }
-.nav-card h3 { margin: 10px 0; color: #00d4ff; }
-.nav-card span { font-size: 0.85em; color: #888; }
-
-footer { text-align: center; padding: 40px; color: #444; }
+.card-icon { font-size: 3em; margin-bottom: 15px; }
