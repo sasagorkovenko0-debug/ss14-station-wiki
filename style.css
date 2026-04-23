@@ -169,3 +169,43 @@ section, .card {
         box-sizing: border-box;
     }
 }
+/* Базовые настройки для всей страницы */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #0b0e14; /* Темный фон, если картинка не загрузится */
+    color: white;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    /* Если у тебя есть файл фона, проверь его название ниже */
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('твой_фон.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* Сетка для плиток */
+.main-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.grid-card {
+    background: rgba(22, 27, 34, 0.8);
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+.grid-card:hover {
+    transform: translateY(-10px);
+    border-color: #58a6ff;
+    box-shadow: 0 0 20px rgba(88, 166, 255, 0.2);
+}
