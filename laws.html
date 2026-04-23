@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Корпоративный закон | NovaCurse</title>
+    <title>Законы и Коды | NovaCurse</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="space"><div class="stars"></div></div>
     
     <div class="menu-trigger" onclick="toggleMenu()">☰ МЕНЮ</div>
+    
     <aside class="sidebar" id="sidebar">
         <div class="close-btn" onclick="toggleMenu()">×</div>
         <div class="menu-section">
@@ -24,72 +25,109 @@
     </aside>
 
     <header>
-        <h1 class="aesthetic-title">Коды <span class="red-glow">Угрозы</span></h1>
-        <p>Протоколы безопасности станции NovaCurse</p>
+        <h1 class="glitch-text">Безопасность и Закон</h1>
+        <p>Центральный протокол станции NovaCurse</p>
     </header>
 
     <main class="content-wrapper">
-        <div class="alert-code code-green">
-            <h3>🟢 Зеленый код (Безопасно)</h3>
-            <p>Станция функционирует в штатном режиме. Прямых угроз нет.</p>
-            <ul>
-                <li>Оружие Службы Безопасности должно находиться в кобуре.</li>
-                <li>Случайные обыски персонала <strong>запрещены</strong>.</li>
-                <li>Доступ в отсеки осуществляется строго по ID-картам.</li>
-            </ul>
-        </div>
+        
+        <section class="card">
+            <h2 style="color: #58a6ff; border-bottom: 1px solid #30363d; padding-bottom: 10px;">Коды Угрозы</h2>
+            <p style="font-size: 0.9em; color: #8b949e;">Нажмите на код, чтобы узнать подробности протокола</p>
 
-        <div class="alert-code code-blue">
-            <h3>🔵 Синий код (Подозрение)</h3>
-            <p>Замечена подозрительная активность, возможна угроза (найдена контрабанда, саботаж).</p>
-            <ul>
-                <li>Офицеры СБ имеют право проводить случайные обыски.</li>
-                <li>Персоналу рекомендуется не ходить по одному.</li>
-                <li>Оружие СБ может быть расчехлено при патрулировании техтоннелей.</li>
-            </ul>
-        </div>
+            <details class="threat-card" style="border-left: 5px solid #2ea043; background: rgba(46, 160, 67, 0.05); margin-bottom: 10px; border-radius: 5px;">
+                <summary style="padding: 15 shadow; cursor: pointer; font-weight: bold; color: #2ea043;">🟢 Зеленый код (Штатный режим)</summary>
+                <div style="padding: 15px;">
+                    <p>Станция функционирует в штатном режиме. Прямых угроз нет.</p>
+                    <ul>
+                        <li>Оружие СБ в кобуре.</li>
+                        <li>Обыски без причины запрещены.</li>
+                    </ul>
+                </div>
+            </details>
 
-        <div class="alert-code code-yellow">
-            <h3>🟡 Желтый код (ЧС локального масштаба)</h3>
-            <p>Локальные повреждения станции, разгерметизация, пожары или метеоритный дождь.</p>
-            <ul>
-                <li>Инженерный отдел получает приоритет в передвижении.</li>
-                <li>Персоналу приказывается покинуть поврежденные сектора.</li>
-                <li>СБ помогает инженерам в оцеплении опасных зон.</li>
-            </ul>
-        </div>
+            <details class="threat-card" style="border-left: 5px solid #1f6feb; background: rgba(31, 111, 235, 0.05); margin-bottom: 10px; border-radius: 5px;">
+                <summary style="padding: 15px; cursor: pointer; font-weight: bold; color: #1f6feb;">🔵 Синий код (Подозрение)</summary>
+                <div style="padding: 15px;">
+                    <p>Подозрительная активность или мелкий саботаж.</p>
+                    <ul>
+                        <li>Разрешены выборочные обыски.</li>
+                        <li>Офицерам разрешено носить оружие в руках.</li>
+                    </ul>
+                </div>
+            </details>
 
-        <div class="alert-code code-amber">
-            <h3>🟠 Янтарный код (Массовое ЧП)</h3>
-            <p>Критическое повреждение станции, сбой гравитации или угроза взрыва двигателя.</p>
-            <ul>
-                <li>Подготовка к возможной эвакуации.</li>
-                <li>Медицинский отдел переводится в режим сортировки раненых.</li>
-                <li>Мародерство карается немедленным арестом.</li>
-            </ul>
-        </div>
+            <details class="threat-card" style="border-left: 5px solid #d29922; background: rgba(210, 153, 34, 0.05); margin-bottom: 10px; border-radius: 5px;">
+                <summary style="padding: 15px; cursor: pointer; font-weight: bold; color: #d29922;">🟡 Желтый код (Техногенная ЧС)</summary>
+                <div style="padding: 15px;">
+                    <p>Разгерметизации, пожары, радиация.</p>
+                    <ul>
+                        <li>Приоритет инженерам.</li>
+                        <li>СБ оцепляет опасные зоны.</li>
+                    </ul>
+                </div>
+            </details>
 
-        <div class="alert-code code-red">
-            <h3>🔴 Красный код (Прямая угроза)</h3>
-            <p>Подтверждено присутствие враждебных агентов (Синдикат, Ядерные оперативники, Вооруженный бунт).</p>
-            <ul>
-                <li>Служба Безопасности переводится в боевой режим. Оружие в руках.</li>
-                <li>Главам отделов выдается летальное оружие.</li>
-                <li>Любое сопротивление СБ может расцениваться как помощь врагу.</li>
-            </ul>
-        </div>
+            <details class="threat-card" style="border-left: 5px solid #f85149; background: rgba(248, 81, 73, 0.05); margin-bottom: 10px; border-radius: 5px;">
+                <summary style="padding: 15px; cursor: pointer; font-weight: bold; color: #f85149;">🔴 Красный код (Критическая угроза)</summary>
+                <div style="padding: 15px;">
+                    <p>Вторжение врага, ядерная угроза или бунт.</p>
+                    <ul>
+                        <li>Боевой режим. Оружие к бою.</li>
+                        <li>Летальная сила разрешена при сопротивлении.</li>
+                    </ul>
+                </div>
+            </details>
 
-        <div class="alert-code code-purple">
-            <h3>🟣 Фиолетовый код (Био-угроза)</h3>
-            <p>Эпидемия неизвестного вируса, прорыв блобов или появление ксеноморфов.</p>
-            <ul>
-                <li>Обязательное ношение изолирующих масок и костюмов.</li>
-                <li>Пораженные сектора закрываются на полный карантин.</li>
-                <li>Зараженные сотрудники подлежат изоляции или уничтожению (в крайних случаях).</li>
-            </ul>
-        </div>
+            <details class="threat-card" style="border-left: 5px solid #a371f7; background: rgba(163, 113, 247, 0.05); border-radius: 5px;">
+                <summary style="padding: 15px; cursor: pointer; font-weight: bold; color: #a371f7;">🟣 Фиолетовый код (Био-угроза)</summary>
+                <div style="padding: 15px;">
+                    <p>Вирусы, инфекции, ксеноморфы.</p>
+                    <ul>
+                        <li>Полный карантин отделов.</li>
+                        <li>Использование костюмов биозащиты обязательно.</li>
+                    </ul>
+                </div>
+            </details>
+        </section>
+
+        <section class="card" style="margin-top: 30px;">
+            <h2 style="color: #ff7b72; border-bottom: 1px solid #30363d; padding-bottom: 10px;">Корпоративный Закон</h2>
+            
+            <div class="law-category">
+                <h3 style="color: #2ea043;">Низкий приоритет (2-5 минут)</h3>
+                <ul style="list-style: none; padding-left: 0;">
+                    <li style="background: rgba(255,255,255,0.03); padding: 10px; margin-bottom: 5px; border-radius: 4px;"><strong>101:</strong> Оскорбление персонала / Нецензурная брань.</li>
+                    <li style="background: rgba(255,255,255,0.03); padding: 10px; margin-bottom: 5px; border-radius: 4px;"><strong>102:</strong> Мелкое хулиганство или вандализм.</li>
+                    <li style="background: rgba(255,255,255,0.03); padding: 10px; margin-bottom: 5px; border-radius: 4px;"><strong>103:</strong> Неподчинение законным требованиям СБ.</li>
+                </ul>
+            </div>
+
+            <div class="law-category" style="margin-top: 20px;">
+                <h3 style="color: #1f6feb;">Средний приоритет (5-10 минут)</h3>
+                <ul style="list-style: none; padding-left: 0;">
+                    <li style="background: rgba(255,255,255,0.03); padding: 10px; margin-bottom: 5px; border-radius: 4px;"><strong>201:</strong> Кража станционного имущества или оборудования.</li>
+                    <li style="background: rgba(255,255,255,0.03); padding: 10px; margin-bottom: 5px; border-radius: 4px;"><strong>202:</strong> Нападение на сотрудника без применения оружия.</li>
+                    <li style="background: rgba(255,255,255,0.03); padding: 10px; margin-bottom: 5px; border-radius: 4px;"><strong>203:</strong> Хранение легкой контрабанды.</li>
+                </ul>
+            </div>
+
+            <div class="law-category" style="margin-top: 20px;">
+                <h3 style="color: #f85149;">Высокий приоритет (15+ минут / Казнь)</h3>
+                <ul style="list-style: none; padding-left: 0;">
+                    <li style="background: rgba(255,255,255,0.03); padding: 10px; margin-bottom: 5px; border-radius: 4px;"><strong>301:</strong> Умышленное убийство / Покушение на убийство.</li>
+                    <li style="background: rgba(255,255,255,0.03); padding: 10px; margin-bottom: 5px; border-radius: 4px;"><strong>302:</strong> Саботаж критических систем (Двигатель, ИИ, Атмос).</li>
+                    <li style="background: rgba(255,255,255,0.03); padding: 10px; margin-bottom: 5px; border-radius: 4px;"><strong>303:</strong> Работа на враждебные синдикаты.</li>
+                </ul>
+            </div>
+        </section>
+
     </main>
 
-    <script>function toggleMenu() { document.getElementById('sidebar').classList.toggle('active'); }</script>
+    <script>
+        function toggleMenu() {
+            document.getElementById('sidebar').classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
