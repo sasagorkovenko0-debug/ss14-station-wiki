@@ -27,13 +27,23 @@ html, body {
 }
 
 body {
-    background-color: var(--bg-color);
-    /* Исправленный фон: фиксированный, чтобы не было пустых пятен при скролле */
-    background-image: radial-gradient(circle at center, #1a1f2c 0%, #05070a 100%);
-    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    background-color: #0b0e14; /* Цвет, пока грузится картинка */
     color: var(--text-color);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
+    min-height: 100vh;
+    
+    /* Эти свойства важны для красивого фона */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    
+    /* Плавный переход фона при загрузке */
+    transition: background-image 0.5s ease-in-out;
+}
 }
 
 /* ШАПКА (Уменьшил отступы, чтобы убрать лишнее место) */
