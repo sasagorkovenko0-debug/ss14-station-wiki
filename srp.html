@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>СРП | NovaCurse</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="space"><div class="stars"></div></div>
+    
+    <div class="menu-trigger" onclick="toggleMenu()">☰ МЕНЮ</div>
+    <aside class="sidebar" id="sidebar">
+        <div class="close-btn" onclick="toggleMenu()">×</div>
+        <div class="menu-section">
+            <h3>Навигация</h3>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="laws.html">Коды и Закон</a></li>
+                <li><a href="jobs.html">Профессии</a></li>
+                <li><a href="srp.html">СРП Отделов</a></li>
+            </ul>
+        </div>
+    </aside>
+
+    <header>
+        <h1 class="aesthetic-title">Стандартные Рабочие <span class="red-glow">Процедуры</span></h1>
+        <p>Регламент работы экипажа</p>
+    </header>
+
+    <main class="content-wrapper">
+        <section class="dept-section">
+            <h2 class="dept-title dept-sec">СРП: Службы Безопасности</h2>
+            <ul>
+                <li><strong>Аресты:</strong> Офицер обязан назвать причину задержания, если подозреваемый не оказывает сопротивления.</li>
+                <li><strong>Уровень силы:</strong> Использование летального оружия на Зеленом/Синем коде против невооруженного экипажа строжайше запрещено.</li>
+                <li><strong>Доступ:</strong> Офицеры не имеют права взламывать чужие отделы без приказа Командования (исключение: погоня).</li>
+            </ul>
+        </section>
+
+        <section class="dept-section">
+            <h2 class="dept-title dept-eng">СРП: Инженерного Отдела</h2>
+            <ul>
+                <li><strong>Питание:</strong> Приоритетная задача смены — запуск основного источника питания (СМ, ТЭГ или Сингулярность).</li>
+                <li><strong>Безопасность:</strong> Инженеры обязаны носить изолирующие перчатки и защитные очки во время работы с проводкой.</li>
+                <li><strong>Проломы:</strong> Ремонт разгерметизаций в общих отсеках в приоритете над постройкой личных проектов.</li>
+            </ul>
+        </section>
+
+        <section class="dept-section">
+            <h2 class="dept-title dept-med">СРП: Медицинского Отдела</h2>
+            <ul>
+                <li><strong>Отказ в помощи:</strong> Медик не имеет права отказать в лечении сотруднику, если тот не представляет прямой физической угрозы.</li>
+                <li><strong>Клонирование:</strong> Трупы без признаков разложения и без пометки "Не клонировать" (DNR) подлежат обязательному клонированию.</li>
+            </ul>
+        </section>
+    </main>
+
+    <script>function toggleMenu() { document.getElementById('sidebar').classList.toggle('active'); }</script>
+</body>
+</html>
