@@ -9,22 +9,25 @@
 <body>
     <header>
         <h1><span class="glitch-text">NovaCurse</span> Wiki</h1>
-        <p>Центральная база данных объектов и протоколов</p>
+        <p>Информационный хаб станции</p>
     </header>
 
-    <div class="container">
+    <div class="burger-nav">
+        <div class="burger-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
         <aside class="sidebar">
             <div class="menu-section">
                 <h3>Навигация</h3>
                 <ul>
-                    <li><a href="#">Заглавная страница</a></li>
-                    <li><a href="#">Свежие правки</a></li>
+                    <li><a href="#">Главная</a></li>
                     <li><a href="#">Механики</a></li>
                     <li><a href="#">Профессии</a></li>
                     <li><a href="#">Физика</a></li>
                 </ul>
             </div>
-            
             <div class="menu-section">
                 <h3>Сообщество</h3>
                 <ul>
@@ -34,28 +37,63 @@
                 </ul>
             </div>
         </aside>
-
-        <main class="content">
-            <section class="welcome-box">
-                <h2>Статус системы: <span class="status-ok">READY</span></h2>
-                <p>Добро пожаловать в официальный архив NovaCurse. Здесь собрана информация об уникальных физических законах и аномалиях нашего сектора.</p>
-            </section>
-
-            <div class="card-grid">
-                <div class="card">
-                    <h3>Атмосферная Физика</h3>
-                    <p>Подробности о том, как работают газы и давление на нашем сервере.</p>
-                </div>
-                <div class="card">
-                    <h3>Инженерный отдел</h3>
-                    <p>Инструкции по обслуживанию кастомных двигателей и электроники.</p>
-                </div>
-            </div>
-        </main>
     </div>
 
+    <main class="content">
+        <section class="info-block">
+            <h2 class="section-title">Standard Roleplay (SRP)</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <h3>Основы RP</h3>
+                    <p>Ваш персонаж — отдельная личность со своими страхами и обязанностями. Запрещено использование мета-информации (то, что знаете вы, но не знает персонаж).</p>
+                </div>
+                <div class="card">
+                    <h3>Взаимодействие</h3>
+                    <p>Любой конфликт должен иметь вескую причину. Антагонисты должны создавать интересные ситуации, а не просто "геноцидить" станцию.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="info-block">
+            <h2 class="section-title">Корпоративный закон</h2>
+            <div class="law-table">
+                <div class="law-item low">
+                    <strong>Мелкие нарушения:</strong> Оскорбления, мелкая кража, хулиганство. <em>Срок: 2-5 минут.</em>
+                </div>
+                <div class="law-item medium">
+                    <strong>Средние нарушения:</strong> Нападение, кража тех. оборудования, ношение оружия без лицензии. <em>Срок: 5-10 минут.</em>
+                </div>
+                <div class="law-item high">
+                    <strong>Тяжкие преступления:</strong> Убийство, саботаж критических систем, предательство. <em>Срок: Пожизненно/Казнь.</em>
+                </div>
+            </div>
+        </section>
+
+        <section class="info-block">
+            <h2 class="section-title">Роли и отделы</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <h3 class="dept-cmd">Командование</h3>
+                    <p>Капитан, Главы отделов. Ответственность за жизни экипажа и сохранность станции.</p>
+                </div>
+                <div class="card">
+                    <h3 class="dept-sec">Безопасность</h3>
+                    <p>Офицеры, ГСБ, Детектив. Поддержание порядка и исполнение Корпоративного закона.</p>
+                </div>
+                <div class="card">
+                    <h3 class="dept-med">Медицинский</h3>
+                    <p>Врачи, Химики. Лечение травм, реанимация и борьба с вирусами.</p>
+                </div>
+                <div class="card">
+                    <h3 class="dept-eng">Инженерный</h3>
+                    <p>Инженеры, Атмосферные техники. Настройка двигателя, подача энергии и ремонт проломов.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
     <footer>
-        <p>&copy; 2026 NovaCurse Project | Данные защищены протоколом связи</p>
+        <p>&copy; 2026 NovaCurse Project | Данные синхронизированы</p>
     </footer>
 </body>
 </html>
