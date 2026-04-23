@@ -1,36 +1,56 @@
-<div class="container">
-    <div class="menu-trigger" onclick="toggleMenu()">☰ МЕНЮ</div>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная | NovaCurse</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="space"><div class="stars"></div></div>
 
-    <aside class="sidebar" id="sidebar">
-        <div class="close-btn" onclick="toggleMenu()">×</div>
-        <div class="menu-section">
-            <h3>Навигация</h3>
-            <ul>
-                <li><a href="index.html">Главная</a></li>
-                <li><a href="laws.html">Коды и Закон</a></li>
-                <li><a href="jobs.html">Профессии</a></li>
-                <li><a href="srp.html">СРП Отделов</a></li>
-            </ul>
-        </div>
-    </aside>
+    <header>
+        <h1 class="glitch-text">NovaCurse <span class="red-glow">Wiki</span></h1>
+        <p>Центральная база данных объектов и протоколов</p>
+    </header>
 
-    <main class="main-content">
-        <div class="main-grid">
-            <a href="laws.html" class="grid-card">
-                <div class="card-icon">⚖️</div>
-                <h3>Корпоративный Закон</h3>
-                <p>Станьте примером для общества</p>
-            </a>
-            <a href="srp.html" class="grid-card">
-                <div class="card-icon">📋</div>
-                <h3>Стандартные Процедуры</h3>
-                <p>Повышайте качество своей работы</p>
-            </a>
-            <a href="jobs.html" class="grid-card">
-                <div class="card-icon">👥</div>
-                <h3>Роли и Профессии</h3>
-                <p>Реализуйте свой потенциал</p>
-            </a>
-        </div>
-    </main>
-</div>
+    <div class="container">
+        <div class="menu-trigger" onclick="toggleMenu()">☰ МЕНЮ</div>
+
+        <aside class="sidebar" id="sidebar">
+            <div class="close-btn" onclick="toggleMenu()">×</div>
+            <div class="menu-section">
+                <h3>Навигация</h3>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="laws.html">Коды и Закон</a></li>
+                    <li><a href="jobs.html">Профессии</a></li>
+                    <li><a href="srp.html">СРП Отделов</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <div class="main-grid">
+                <a href="laws.html" class="grid-card">
+                    <div class="card-icon">⚖️</div>
+                    <h3>Корпоративный Закон</h3>
+                    <p>Станьте примером для общества</p>
+                </a>
+                <a href="srp.html" class="grid-card">
+                    <div class="card-icon">📋</div>
+                    <h3>Стандартные Процедуры</h3>
+                    <p>Повышайте качество своей работы</p>
+                </a>
+                <a href="jobs.html" class="grid-card">
+                    <div class="card-icon">👥</div>
+                    <h3>Роли и Профессии</h3>
+                    <p>Реализуйте свой потенциал</p>
+                </a>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
