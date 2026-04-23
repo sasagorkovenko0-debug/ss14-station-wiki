@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Корпоративный закон | NovaCurse</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="space"><div class="stars"></div><div class="stars2"></div><div class="stars3"></div></div>
+    <div class="menu-trigger" onclick="toggleMenu()">☰ МЕНЮ</div>
+    <aside class="sidebar" id="sidebar">
+        <div class="close-btn" onclick="toggleMenu()">×</div>
+        <div class="menu-section">
+            <h3>Навигация</h3>
+            <ul><li><a href="index.html">Главная</a></li><li><a href="laws.html">Закон</a></li></ul>
+        </div>
+    </aside>
+
+    <header>
+        <h1><span class="glitch-text">Корпоративный</span> Закон</h1>
+        <p>Свод правил и наказаний станции NovaCurse</p>
+    </header>
+
+    <main class="content-laws">
+        <section class="law-category">
+            <h2 class="low-crime">Зеленый уровень (Мелкие нарушения)</h2>
+            <div class="law-box">
+                <ul>
+                    <li><strong>101:</strong> Оскорбление персонала.</li>
+                    <li><strong>102:</strong> Неподчинение офицеру.</li>
+                </ul>
+            </div>
+        </section>
+        <section class="law-category">
+            <h2 class="high-crime">Красный уровень (Тяжкие)</h2>
+            <div class="law-box">
+                <ul>
+                    <li><strong>301:</strong> Убийство.</li>
+                    <li><strong>302:</strong> Саботаж ИИ/Двигателя.</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    <script>function toggleMenu() { document.getElementById('sidebar').classList.toggle('active'); }</script>
+</body>
+</html>
