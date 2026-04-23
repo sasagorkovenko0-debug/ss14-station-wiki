@@ -117,3 +117,33 @@ header {
 }
 
 .card-icon { font-size: 3em; margin-bottom: 15px; }
+/* Стили для страницы законов */
+.content-laws {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.law-category {
+    margin-bottom: 30px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 10px;
+    padding: 15px;
+    border: 1px solid #333;
+}
+
+.law-box ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.law-box li {
+    padding: 8px 15px;
+    margin: 5px 0;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+}
+
+.low-crime { color: #2ecc71; border-bottom: 2px solid #2ecc71; }
+.medium-crime { color: #3498db; border-bottom: 2px solid #3498db; }
+.high-crime { color: #e74c3c; border-bottom: 2px solid #e74c3c; }
