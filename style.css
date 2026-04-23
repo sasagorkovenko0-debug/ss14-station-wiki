@@ -1,89 +1,119 @@
 body {
-    background-color: #0d0d15;
-    color: #e0e0e0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0b0b10;
+    color: #d1d1d1;
+    font-family: 'Segoe UI', Roboto, sans-serif;
     margin: 0;
-    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 header {
-    background: linear-gradient(to bottom, #1a1a2e, #0d0d15);
-    padding: 30px;
+    background: #12121c;
+    padding: 20px;
     text-align: center;
-    border-bottom: 2px solid #00d4ff;
+    border-bottom: 2px solid #333;
+}
+
+/* Анимация мигания и перелива цветов */
+.glitch-text {
+    font-weight: bold;
+    text-transform: uppercase;
+    animation: colorShift 5s infinite;
+    text-shadow: 0 0 10px currentColor;
+}
+
+@keyframes colorShift {
+    0% { color: #ff0000; }   /* Красный */
+    25% { color: #0080ff; }  /* Синий */
+    50% { color: #00ff80; }  /* Зеленый */
+    75% { color: #bf00ff; }  /* Фиолетовый */
+    100% { color: #ff0000; } /* Снова красный */
 }
 
 h1 {
-    color: #00d4ff;
-    text-shadow: 0 0 10px #00d4ff;
+    font-size: 2.5em;
     margin: 0;
-    letter-spacing: 2px;
+    color: #fff;
 }
 
-nav {
-    background: #161625;
-    padding: 10px 0;
-    border-bottom: 1px solid #333;
-}
-
-.nav-container {
+.container {
     display: flex;
-    justify-content: center;
+    flex: 1;
+    max-width: 1200px;
+    margin: 20px auto;
+    width: 100%;
     gap: 20px;
 }
 
-.nav-item {
-    padding: 8px 15px;
-    border: 1px solid transparent;
-    cursor: pointer;
-    transition: 0.3s;
-    color: #aaa;
+/* Стили бокового меню */
+.sidebar {
+    width: 250px;
+    background: #161625;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #2a2a3a;
+    height: fit-content;
 }
 
-.nav-item:hover {
+.menu-section h3 {
+    color: #555;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    border-bottom: 1px solid #333;
+    padding-bottom: 5px;
+    margin-top: 0;
+}
+
+.menu-section ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+.menu-section li {
+    margin: 10px 0;
+}
+
+.menu-section a {
     color: #00d4ff;
-    border: 1px solid #00d4ff;
-    background: rgba(0, 212, 255, 0.1);
+    text-decoration: none;
+    transition: 0.2s;
 }
 
-main {
-    max-width: 1000px;
-    margin: 20px auto;
-    padding: 0 20px;
+.menu-section a:hover {
+    color: #fff;
+    text-shadow: 0 0 5px #00d4ff;
+}
+
+/* Основной контент */
+.content {
+    flex: 1;
 }
 
 .welcome-box {
     background: #1a1a2e;
     padding: 20px;
     border-radius: 8px;
-    border-left: 5px solid #00d4ff;
-    margin-bottom: 30px;
+    border-left: 4px solid #ff0000;
+    margin-bottom: 20px;
 }
 
-.status-green {
+.status-ok {
     color: #00ff00;
-    text-shadow: 0 0 5px #00ff00;
 }
 
-.content-grid {
-    display: flex;
+.card-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 20px;
-    flex-wrap: wrap;
 }
 
 .card {
-    flex: 1;
-    min-width: 280px;
     background: #161625;
     padding: 20px;
     border-radius: 8px;
-    border: 1px solid #333;
-    transition: transform 0.2s;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    border-color: #00d4ff;
+    border: 1px solid #2a2a3a;
 }
 
 .card h3 {
@@ -94,6 +124,6 @@ main {
 footer {
     text-align: center;
     padding: 20px;
+    color: #444;
     font-size: 0.8em;
-    color: #555;
 }
