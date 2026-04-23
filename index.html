@@ -7,67 +7,68 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="space-background">
+    <div class="space">
         <div class="stars"></div>
-        <div class="twinkling"></div>
-        <div class="nebula"></div>
+        <div class="stars2"></div>
+        <div class="stars3"></div>
     </div>
+
+    <div class="menu-trigger" onclick="toggleMenu()">☰ МЕНЮ</div>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="close-btn" onclick="toggleMenu()">×</div>
+        <div class="menu-section">
+            <h3>Навигация</h3>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="mechanics.html">Механики</a></li>
+                <li><a href="jobs.html">Профессии</a></li>
+                <li><a href="physics.html">Физика</a></li>
+            </ul>
+        </div>
+        <div class="menu-section">
+            <h3>Сообщество</h3>
+            <ul>
+                <li><a href="#">Discord</a></li>
+                <li><a href="#">YouTube</a></li>
+            </ul>
+        </div>
+    </aside>
 
     <header>
         <h1><span class="glitch-text">NovaCurse</span> Wiki</h1>
-        <p>Информационный хаб станции</p>
+        <p>Центральный терминал управления данными</p>
     </header>
 
-    <div class="container">
-        <aside class="sidebar">
-            <div class="menu-section">
-                <h3>Навигация</h3>
-                <ul>
-                    <li><a href="index.html">Главная</a></li>
-                    <li><a href="#">Механики</a></li>
-                    <li><a href="#">Профессии</a></li>
-                    <li><a href="#">Физика</a></li>
-                </ul>
-            </div>
-            <div class="menu-section">
-                <h3>Сообщество</h3>
-                <ul>
-                    <li><a href="#">Discord</a></li>
-                    <li><a href="#">YouTube</a></li>
-                    <li><a href="#">Boosty</a></li>
-                </ul>
-            </div>
-        </aside>
+    <main class="content">
+        <div class="nav-grid">
+            <a href="laws.html" class="nav-card">
+                <div class="card-icon">⚖️</div>
+                <h3>Корпоративный закон</h3>
+                <p>Кодексы и сроки заключения</p>
+            </a>
+            <a href="jobs.html" class="nav-card">
+                <div class="card-icon">👥</div>
+                <h3>Роли и отделы</h3>
+                <p>Инструкции для персонала</p>
+            </a>
+            <a href="srp.html" class="nav-card">
+                <div class="card-icon">📜</div>
+                <h3>Правила SRP</h3>
+                <p>Основы ролевой игры</p>
+            </a>
+            <a href="mechanics.html" class="nav-card">
+                <div class="card-icon">🧪</div>
+                <h3>Механики</h3>
+                <p>Гайды по системам станции</p>
+            </a>
+        </div>
+    </main>
 
-        <main class="content">
-            <h2 class="main-title">База данных объектов</h2>
-            <div class="nav-grid">
-                <a href="#" class="nav-card">
-                    <div class="card-icon">⚖️</div>
-                    <h3>Корпоративный закон</h3>
-                    <span>Протоколы задержания и кодексы</span>
-                </a>
-                <a href="#" class="nav-card">
-                    <div class="card-icon">👥</div>
-                    <h3>Роли и отделы</h3>
-                    <span>Список профессий и их обязанности</span>
-                </a>
-                <a href="#" class="nav-card">
-                    <div class="card-icon">📜</div>
-                    <h3>Правила SRP</h3>
-                    <span>Основы ролевого взаимодействия</span>
-                </a>
-                <a href="#" class="nav-card">
-                    <div class="card-icon">🧪</div>
-                    <h3>Механики</h3>
-                    <span>Химия, Атмос и Строительство</span>
-                </a>
-            </div>
-        </main>
-    </div>
-
-    <footer>
-        <p>&copy; 2026 NovaCurse Project | Терминал активен</p>
-    </footer>
+    <script>
+        function toggleMenu() {
+            document.getElementById('sidebar').classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
