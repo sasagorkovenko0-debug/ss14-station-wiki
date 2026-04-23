@@ -7,41 +7,89 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="space"><div class="stars"></div><div class="stars2"></div><div class="stars3"></div></div>
+    <div class="space"><div class="stars"></div></div>
+    
     <div class="menu-trigger" onclick="toggleMenu()">☰ МЕНЮ</div>
     <aside class="sidebar" id="sidebar">
         <div class="close-btn" onclick="toggleMenu()">×</div>
         <div class="menu-section">
             <h3>Навигация</h3>
-            <ul><li><a href="index.html">Главная</a></li><li><a href="laws.html">Закон</a></li></ul>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="laws.html">Коды и Закон</a></li>
+                <li><a href="jobs.html">Профессии</a></li>
+                <li><a href="srp.html">СРП Отделов</a></li>
+            </ul>
         </div>
     </aside>
 
     <header>
-        <h1><span class="glitch-text">Корпоративный</span> Закон</h1>
-        <p>Свод правил и наказаний станции NovaCurse</p>
+        <h1 class="aesthetic-title">Коды <span class="red-glow">Угрозы</span></h1>
+        <p>Протоколы безопасности станции NovaCurse</p>
     </header>
 
-    <main class="content-laws">
-        <section class="law-category">
-            <h2 class="low-crime">Зеленый уровень (Мелкие нарушения)</h2>
-            <div class="law-box">
-                <ul>
-                    <li><strong>101:</strong> Оскорбление персонала.</li>
-                    <li><strong>102:</strong> Неподчинение офицеру.</li>
-                </ul>
-            </div>
-        </section>
-        <section class="law-category">
-            <h2 class="high-crime">Красный уровень (Тяжкие)</h2>
-            <div class="law-box">
-                <ul>
-                    <li><strong>301:</strong> Убийство.</li>
-                    <li><strong>302:</strong> Саботаж ИИ/Двигателя.</li>
-                </ul>
-            </div>
-        </section>
+    <main class="content-wrapper">
+        <div class="alert-code code-green">
+            <h3>🟢 Зеленый код (Безопасно)</h3>
+            <p>Станция функционирует в штатном режиме. Прямых угроз нет.</p>
+            <ul>
+                <li>Оружие Службы Безопасности должно находиться в кобуре.</li>
+                <li>Случайные обыски персонала <strong>запрещены</strong>.</li>
+                <li>Доступ в отсеки осуществляется строго по ID-картам.</li>
+            </ul>
+        </div>
+
+        <div class="alert-code code-blue">
+            <h3>🔵 Синий код (Подозрение)</h3>
+            <p>Замечена подозрительная активность, возможна угроза (найдена контрабанда, саботаж).</p>
+            <ul>
+                <li>Офицеры СБ имеют право проводить случайные обыски.</li>
+                <li>Персоналу рекомендуется не ходить по одному.</li>
+                <li>Оружие СБ может быть расчехлено при патрулировании техтоннелей.</li>
+            </ul>
+        </div>
+
+        <div class="alert-code code-yellow">
+            <h3>🟡 Желтый код (ЧС локального масштаба)</h3>
+            <p>Локальные повреждения станции, разгерметизация, пожары или метеоритный дождь.</p>
+            <ul>
+                <li>Инженерный отдел получает приоритет в передвижении.</li>
+                <li>Персоналу приказывается покинуть поврежденные сектора.</li>
+                <li>СБ помогает инженерам в оцеплении опасных зон.</li>
+            </ul>
+        </div>
+
+        <div class="alert-code code-amber">
+            <h3>🟠 Янтарный код (Массовое ЧП)</h3>
+            <p>Критическое повреждение станции, сбой гравитации или угроза взрыва двигателя.</p>
+            <ul>
+                <li>Подготовка к возможной эвакуации.</li>
+                <li>Медицинский отдел переводится в режим сортировки раненых.</li>
+                <li>Мародерство карается немедленным арестом.</li>
+            </ul>
+        </div>
+
+        <div class="alert-code code-red">
+            <h3>🔴 Красный код (Прямая угроза)</h3>
+            <p>Подтверждено присутствие враждебных агентов (Синдикат, Ядерные оперативники, Вооруженный бунт).</p>
+            <ul>
+                <li>Служба Безопасности переводится в боевой режим. Оружие в руках.</li>
+                <li>Главам отделов выдается летальное оружие.</li>
+                <li>Любое сопротивление СБ может расцениваться как помощь врагу.</li>
+            </ul>
+        </div>
+
+        <div class="alert-code code-purple">
+            <h3>🟣 Фиолетовый код (Био-угроза)</h3>
+            <p>Эпидемия неизвестного вируса, прорыв блобов или появление ксеноморфов.</p>
+            <ul>
+                <li>Обязательное ношение изолирующих масок и костюмов.</li>
+                <li>Пораженные сектора закрываются на полный карантин.</li>
+                <li>Зараженные сотрудники подлежат изоляции или уничтожению (в крайних случаях).</li>
+            </ul>
+        </div>
     </main>
+
     <script>function toggleMenu() { document.getElementById('sidebar').classList.toggle('active'); }</script>
 </body>
 </html>
