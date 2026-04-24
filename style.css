@@ -21,6 +21,9 @@
 
 /* ОБЩИЕ СТИЛИ */
 html, body {
+    body {
+    background: transparent !important;
+}
     margin: 0;
     padding: 0;
     width: 100%;
