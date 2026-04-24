@@ -1,6 +1,6 @@
 /* ПЕРЕМЕННЫЕ */
 :root {
-    --bg-color: #0b0e14;
+    --bg-color: #05070a;
     --card-bg: rgba(22, 27, 34, 0.9);
     --sidebar-bg: rgba(20, 25, 35, 0.95);
     --text-color: #c0c5ce;
@@ -19,54 +19,60 @@
     --srv-color: #8cff66;
 }
 
-/* ОСНОВНОЙ ФОН И СБРОС ОТСТУПОВ */
+/* ОБЩИЕ СТИЛИ */
 html, body {
     margin: 0;
     padding: 0;
+    width: 100%;
     min-height: 100vh;
-}
-
-body {
-    margin: 0;
-    padding: 0;
-    background-color: #0b0e14; /* Цвет, пока грузится картинка */
+    background-color: var(--bg-color);
     color: var(--text-color);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    min-height: 100vh;
-    
-    /* Эти свойства важны для красивого фона */
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    
-    /* Плавный переход фона при загрузке */
-    transition: background-image 0.5s ease-in-out;
-}
+    overflow-x: hidden;
 }
 
-/* ШАПКА (Уменьшил отступы, чтобы убрать лишнее место) */
-header {
-    background: linear-gradient(180deg, rgba(17, 20, 36, 1) 0%, rgba(15, 17, 26, 0) 100%);
-    text-align: center;
-    padding: 1.5rem 1rem; /* Уменьшено с 3rem */
+/* ХОЛСТ ДЛЯ ЖИВЫХ ЗВЕЗД */
+#starfield {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Фон всегда сзади */
+    background: radial-gradient(circle at center, #1a1f2c 0%, #05070a 100%);
 }
 
+/* КРАСИВАЯ МИГАЮЩАЯ НАДПИСЬ (NovaCurse) */
 .glitch-text {
-    font-size: 2.5rem; /* Немного компактнее */
+    font-size: 3rem;
     font-weight: 800;
-    background: linear-gradient(90deg, #4facfe, #00f2fe, #4facfe);
-    background-size: 200% auto;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 0 10px rgba(79, 172, 254, 0.4));
-    animation: shine 3s linear infinite;
+    text-align: center;
     margin: 0;
+    padding-top: 1rem;
+    
+    /* Анимация перелива цветов */
+    animation: novaColor 10s infinite alternate ease-in-out, novaGlow 4s infinite alternate;
 }
 
-@keyframes shine {
-    to { background-position: 200% center; }
+@keyframes novaColor {
+    0% { color: #4facfe; }
+    25% { color: #00f2fe; }
+    50% { color: #ff4d4d; } /* Красный акцент */
+    75% { color: #ffd633; } /* Золотистый */
+    100% { color: #a371f7; } /* Фиолетовый */
+}
+
+@keyframes novaGlow {
+    from { text-shadow: 0 0 10px rgba(79, 172, 254, 0.4); }
+    to { text-shadow: 0 0 25px rgba(163, 113, 247, 0.7), 0 0 10px rgba(255, 77, 77, 0.4); }
+}
+
+/* ШАПКА */
+header {
+    background: linear-gradient(180deg, rgba(17, 20, 36, 0.8) 0%, rgba(15, 17, 26, 0) 100%);
+    text-align: center;
+    padding: 1.5rem 1rem;
 }
 
 /* КОНТЕЙНЕР */
@@ -74,28 +80,23 @@ header {
     display: flex;
     max-width: 1400px;
     margin: 0 auto;
-    padding: 0 20px 40px 20px; /* Убрал верхний padding, добавил боковой */
+    padding: 0 20px 40px 20px;
     gap: 25px;
-    align-items: flex-start; /* Важно для работы sticky */
+    align-items: flex-start;
 }
 
-/* ИСПРАВЛЕНИЕ НАВИГАЦИИ (SIDEBAR) */
+/* НАВИГАЦИЯ (SIDEBAR) */
 .sidebar {
     width: 240px;
     background: var(--sidebar-bg);
     padding: 20px;
     border-radius: 12px;
     border: 1px solid #30363d;
-    
-    /* Sticky теперь будет работать корректно и не перекрывать всё */
     position: sticky;
     top: 20px; 
     z-index: 10;
     flex-shrink: 0;
-}
-
-.menu-section {
-    margin-bottom: 20px;
+    transition: left 0.3s ease;
 }
 
 .sidebar h3 {
@@ -109,26 +110,43 @@ header {
 
 .sidebar ul { list-style: none; padding: 0; margin: 0; }
 .sidebar li { margin-bottom: 8px; }
+.sidebar a { color: var(--accent-blue); text-decoration: none; transition: 0.2s; }
+.sidebar a:hover { color: #fff; text-shadow: 0 0 8px var(--accent-blue); }
 
-.sidebar a {
-    color: var(--accent-blue);
-    font-size: 0.95rem;
-    text-decoration: none;
-    transition: 0.2s;
-}
-
-.sidebar a:hover {
-    color: #fff;
-    text-shadow: 0 0 8px var(--accent-blue);
-}
-
-/* КОНТЕНТНАЯ ЧАСТЬ */
+/* ОСНОВНОЙ КОНТЕНТ */
 .main-content {
     flex: 1;
-    min-width: 0; /* Предотвращает распирание гридов */
+    min-width: 0;
 }
 
-/* КАРТОЧКИ */
+/* СЕТКА ПЛИТОК (ГЛАВНАЯ) */
+.main-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.grid-card {
+    background: var(--card-bg);
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+.grid-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 20px rgba(88, 166, 255, 0.2);
+}
+
+.card-icon { font-size: 3rem; margin-bottom: 15px; }
+
+/* КАРТОЧКИ (ТЕКСТОВЫЕ) */
 section, .card {
     background: var(--card-bg);
     border: 1px solid #30363d;
@@ -136,17 +154,10 @@ section, .card {
     padding: 20px;
     margin-bottom: 20px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    border-left: 4px solid transparent;
 }
 
-/* СЕТКИ РОЛЕЙ И ЗАКОНОВ */
-.roles-grid, .card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 15px;
-}
-
-/* ЦВЕТА УГРОЗ (Исправление рамок) */
-.threat-card, .card { border-left: 4px solid transparent; }
+/* ЦВЕТА УГРОЗ */
 .green, .threat-green { border-left-color: var(--accent-green); }
 .blue, .threat-blue { border-left-color: var(--accent-blue); }
 .yellow, .threat-yellow { border-left-color: var(--accent-yellow); }
@@ -164,58 +175,10 @@ section, .card {
     border-radius: 20px;
     cursor: pointer;
     z-index: 100;
-    font-size: 0.85rem;
 }
 
 /* МОБИЛЬНАЯ АДАПТАЦИЯ */
 @media (max-width: 1000px) {
-    .container {
-        flex-direction: column;
-    }
-    .sidebar {
-        position: relative;
-        width: 100%;
-        top: 0;
-        box-sizing: border-box;
-    }
-}
-/* Базовые настройки для всей страницы */
-body {
-    margin: 0;
-    padding: 0;
-    background-color: #0b0e14; /* Темный фон, если картинка не загрузится */
-    color: white;
-    font-family: Arial, sans-serif;
-    min-height: 100vh;
-    /* Если у тебя есть файл фона, проверь его название ниже */
-    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('твой_фон.jpg');
-    background-size: cover;
-    background-attachment: fixed;
-}
-
-/* Сетка для плиток */
-.main-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-    padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.grid-card {
-    background: rgba(22, 27, 34, 0.8);
-    border: 1px solid #30363d;
-    border-radius: 12px;
-    padding: 30px;
-    text-align: center;
-    text-decoration: none;
-    color: white;
-    transition: 0.3s;
-}
-
-.grid-card:hover {
-    transform: translateY(-10px);
-    border-color: #58a6ff;
-    box-shadow: 0 0 20px rgba(88, 166, 255, 0.2);
+    .container { flex-direction: column; }
+    .sidebar { position: relative; width: 100%; top: 0; box-sizing: border-box; }
 }
