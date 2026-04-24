@@ -1,51 +1,70 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const music = document.getElementById('bg-music');
-    const musicBtn = document.getElementById('music-toggle');
-    let isPlaying = false;
+const canvas = document.getElementById('starfield');
+const ctx = canvas.getContext('2d');
 
-    // Устанавливаем громкость пониже, чтобы эмбиент не орал
-    music.volume = 0.2; 
+let stars = [];
+const starCount = 150; // Количество звезд
 
-    musicBtn.addEventListener('click', () => {
-        if (isPlaying) {
-            music.pause();
-            // Меняем иконку и текст на "Выкл"
-            musicBtn.innerHTML = '<i class="fas fa-volume-mute"></i> Музыка (Выкл)';
-            musicBtn.style.borderColor = "#4d94ff"; 
-        } else {
-            music.play();
-            // Меняем иконку и текст на "Вкл"
-            musicBtn.innerHTML = '<i class="fas fa-volume-up"></i> Музыка (Вкл)';
-            musicBtn.style.borderColor = "#4dff88"; // Зеленая рамка при работе
-        }
-        isPlaying = !isPlaying;
-    });
-});
-// Список фоновых изображений
-const backgrounds = [
-    'https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=1920&q=80', // Туманность
-    'https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=1920&q=80', // Планета Земля из космоса
-    'https://images.unsplash.com/photo-1506318137071-a8e063b4bcc0?auto=format&fit=crop&w=1920&q=80', // Звезды/Млечный путь
-    'https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?auto=format&fit=crop&w=1920&q=80', // Марс/Красная планета
-    'https://images.unsplash.com/photo-1465101162946-4377e57745c3?auto=format&fit=crop&w=1920&q=80'  // Глубокий космос
-];
-
-function setRandomBackground() {
-    // Выбираем случайное число от 0 до длины массива
-    const randomIndex = Math.floor(Math.random() * backgrounds.length);
-    const selectedImage = backgrounds[randomIndex];
-    
-    // Применяем фон к body с небольшим затемнением (overlay), чтобы текст читался
-    document.body.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('${selectedImage}')`;
+// Подстраиваем размер холста под экран
+function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
 }
 
-// Запускаем функцию при загрузке страницы
-window.onload = function() {
-    setRandomBackground();
-    // Если у тебя была функция для меню, не забудь оставить её тут или вызвать
-};
+window.addEventListener('resize', resize);
+resize();
 
-// Твоя старая функция меню
+// Создание звезды
+class Star {
+    constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 2;
+        this.speedX = (Math.random() - 0.5) * 0.5; // Скорость по X
+        this.speedY = (Math.random() - 0.5) * 0.5; // Скорость по Y
+        this.opacity = Math.random();
+    }
+
+    update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+
+        // Если звезда улетела за экран, возвращаем её с другой стороны
+        if (this.x < 0) this.x = canvas.width;
+        if (this.x > canvas.width) this.x = 0;
+        if (this.y < 0) this.y = canvas.height;
+        if (this.y > canvas.height) this.y = 0;
+    }
+
+    draw() {
+        ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+    }
+}
+
+// Инициализация
+function init() {
+    stars = [];
+    for (let i = 0; i < starCount; i++) {
+        stars.push(new Star());
+    }
+}
+
+// Анимация
+function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    stars.forEach(star => {
+        star.update();
+        star.draw();
+    });
+    requestAnimationFrame(animate);
+}
+
+init();
+animate();
+
+// Функция меню (не удаляй свою старую)
 function toggleMenu() {
     const sidebar = document.getElementById('sidebar');
     sidebar.classList.toggle('active');
