@@ -185,3 +185,47 @@ section, .card {
     .container { flex-direction: column; }
     .sidebar { position: relative; width: 100%; top: 0; box-sizing: border-box; }
 }
+/* Контейнер для иконок отделов */
+.dept-nav {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+/* Общий стиль кнопок-иконок */
+.dept-btn {
+    background: var(--card-bg);
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.dept-icon {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+/* Цветные рамки для каждого отдела */
+.dept-btn.cmd { border-bottom: 4px solid var(--cmd-color); }
+.dept-btn.sec { border-bottom: 4px solid var(--sec-color); }
+.dept-btn.med { border-bottom: 4px solid var(--med-color); }
+
+/* Эффект при наведении */
+.dept-btn:hover {
+    transform: translateY(-5px);
+    background: rgba(88, 166, 255, 0.1);
+    box-shadow: 0 0 15px rgba(88, 166, 255, 0.2);
+}
+
+/* Плавный скролл при нажатии на иконку */
+html {
+    scroll-behavior: smooth;
+}
