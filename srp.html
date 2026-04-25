@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>СРП | NovaCurse</title>
+    <title>СРП Отделов | NovaCurse</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <canvas id="starfield"></canvas>
     
     <header>
-        <h1 class="glitch-text">Стандартные Рабочие Procedures</h1>
-        <p>Центральная база данных протоколов экипажа</p>
+        <h1 class="glitch-text">Стандартные Рабочие Процедуры</h1>
+        <p>Выберите департамент для ознакомления с протоколами</p>
     </header>
 
     <div class="container">
@@ -25,81 +25,32 @@
                     <li><a href="srp.html">СРП Отделов</a></li>
                 </ul>
             </div>
-            <div class="menu-section">
-                <h3>Сообщество</h3>
-                <ul>
-                    <li><a href="#">Discord</a></li>
-                    <li><a href="#">YouTube</a></li>
-                    <li><a href="#">Boosty</a></li>
-                </ul>
-            </div>
         </aside>
 
         <main class="main-content">
             <div class="dept-nav">
-    <a href="#command" class="dept-btn cmd">
-        <span class="dept-icon">👑</span>
-        <span>Командование</span>
-    </a>
-    <a href="#security" class="dept-btn sec">
-        <span class="dept-icon">🛡️</span>
-        <span>Безопасность</span>
-    </a>
-    <a href="#medical" class="dept-btn med">
-        <span class="dept-icon">⚕️</span>
-        <span>Медицина</span>
-    </a>
-</div>
-
-<main class="main-content">
-    <section class="card" id="command">
-        <h2 class="dept-cmd">СРП: Командование</h2>
-        <ul>
-            <li><strong>Ответственность:</strong> Главы отделов несут полную ответственность за действия своих подчиненных.</li>
-            <li><strong>Зеленый код:</strong> Капитан обязан обеспечивать свободное перемещение экипажа по нережимным объектам.</li>
-        </ul>
-    </section>
-
-    <section class="card" id="security">
-        <h2 class="dept-sec">СРП: Службы Безопасности</h2>
-        <ul>
-            <li><strong>Аресты:</strong> Офицер обязан назвать причину задержания.</li>
-            <li><strong>Сила:</strong> Нелетальное оружие — приоритет на низких кодах.</li>
-        </ul>
-    </section>
-
-    <section class="card" id="medical">
-        <h2 class="dept-med">СРП: Медицинского Отдела</h2>
-        <ul>
-            <li><strong>Лечение:</strong> Медик не имеет права отказать в помощи.</li>
-            <li><strong>Клонирование:</strong> Обязательно, если нет пометки DNR.</li>
-        </ul>
-    </section>
-</main>
-            <section class="card">
-                <h2 class="dept-sec">СРП: Службы Безопасности</h2>
-                <ul>
-                    <li><strong>Аресты:</strong> Офицер обязан назвать причину задержания, если подозреваемый не оказывает сопротивления.</li>
-                    <li><strong>Уровень силы:</strong> Использование летального оружия на Зеленом/Синем коде против невооруженного экипажа строжайше запрещено.</li>
-                    <li><strong>Доступ:</strong> Офицеры не имеют права взламывать чужие отделы без приказа Командования (исключение: погоня).</li>
-                </ul>
-            </section>
+                <a href="srp_cmd.html" class="dept-btn cmd">
+                    <span class="dept-icon">👑</span>
+                    <span>Командование</span>
+                </a>
+                <a href="srp_sec.html" class="dept-btn sec">
+                    <span class="dept-icon">🛡️</span>
+                    <span>Безопасность</span>
+                </a>
+                <a href="srp_med.html" class="dept-btn med">
+                    <span class="dept-icon">⚕️</span>
+                    <span>Медицина</span>
+                </a>
+                <a href="srp_eng.html" class="dept-btn eng">
+                    <span class="dept-icon">🔧</span>
+                    <span>Инженерия</span>
+                </a>
+            </div>
 
             <section class="card">
-                <h2 class="dept-eng">СРП: Инженерного Отдела</h2>
-                <ul>
-                    <li><strong>Питание:</strong> Приоритетная задача смены — запуск основного источника питания (СМ, ТЭГ или Сингулярность).</li>
-                    <li><strong>Безопасность:</strong> Инженеры обязаны носить изолирующие перчатки и защитные очки во время работы с проводкой.</li>
-                    <li><strong>Проломы:</strong> Ремонт разгерметизаций в общих отсеках в приоритете над постройкой личных проектов.</li>
-                </ul>
-            </section>
-
-            <section class="card">
-                <h2 class="dept-med">СРП: Медицинского Отдела</h2>
-                <ul>
-                    <li><strong>Отказ в помощи:</strong> Медик не имеет права отказать в лечении сотруднику, если тот не представляет прямой физической угрозы.</li>
-                    <li><strong>Клонирование:</strong> Трупы без признаков разложения и без пометки "Не клонировать" (DNR) подлежат обязательному клонированию.</li>
-                </ul>
+                <p style="text-align: center; color: #8b949e;">
+                    Нажмите на иконку отдела, чтобы перейти к детальному списку правил и протоколов.
+                </p>
             </section>
         </main>
     </div>
