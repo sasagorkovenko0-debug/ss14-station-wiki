@@ -200,6 +200,60 @@
         </div>
     </div>
 </details>
+            <details class="threat-item yellow">
+    <summary class="threat-header">
+        <div class="threat-status">
+            <span class="status-indicator"></span>
+            <span class="status-name">Уровень угрозы: Желтый</span>
+        </div>
+        <span class="threat-desc-short">Атмосферная или структурная угроза</span>
+        <div class="collapse-icon"></div>
+    </summary>
+    
+    <div class="threat-content">
+        <div class="announcement-box">
+            <p class="quote">«Внимание! Уровень угрозы станции теперь желтый! На станции присутствует структурная или атмосферная угроза. Инженерно-техническому персоналу рекомендуется немедленно реагировать и предпринимать меры по обеспечению безопасности. Членам экипажа рекомендуется удалиться от угрозы и при необходимости оставаться на своих рабочих местах»</p>
+            <div class="audio-control">
+                <span>Объявление:</span>
+                <button class="play-btn" onclick="playThreatAudio('yellow')">
+                    <span class="play-icon">▶</span> Прослушать
+                </button>
+                <audio id="audio-yellow" src="yellow.mp3"></audio>
+            </div>
+        </div>
+        
+        <div class="threat-info-grid">
+            <div class="info-block">
+                <h4>Устанавливается</h4>
+                <p>Капитаном, Главой Персонала, Старшим Инженером.</p>
+            </div>
+            
+            <div class="info-block">
+                <h4>Доступы</h4>
+                <p>СИ и Атмтехи получают расширенный доступ ко всем шлюзам (кроме кабинетов Глав и Арсенала) через 30 секунд после введения кода.</p>
+            </div>
+            
+            <div class="info-block">
+                <h4>Инженерный отдел</h4>
+                <ul>
+                    <li>Немедленное следование к зоне повреждений для ремонта;</li>
+                    <li>СИ обязан контролировать работы и содействовать подчиненным;</li>
+                    <li>Экипаж должен быть оповещен о местах разгерметизаций/поломок.</li>
+                </ul>
+            </div>
+            
+            <div class="info-block">
+                <h4>Нормы экипажа</h4>
+                <ul>
+                    <li>Подчинение правомерным требованиям инженеров;</li>
+                    <li>Запрет на нахождение в зонах проведения тех. работ;</li>
+                    <li>СБ сохраняет привилегии Синего кода;</li>
+                    <li>Незарегистрированные лица: права согласно Синему коду.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</details>
             <section class="card">
                 <p style="text-align: center; color: #8b949e; margin: 0;">
                     Нажмите на иконку отдела, чтобы перейти к детальному списку правил и протоколов.
