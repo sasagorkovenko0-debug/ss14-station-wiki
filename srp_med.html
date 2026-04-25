@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>СРП Медицины | NovaCurse</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="starfield"></canvas>
+    
+    <header>
+        <h1 class="glitch-text">Медицинский Отдел</h1>
+        <p>Протоколы лечения и биологической безопасности</p>
+    </header>
+
+    <div class="container">
+        <aside class="sidebar">
+            <div class="menu-section">
+                <h3>Навигация</h3>
+                <ul>
+                    <li><a href="srp.html">← Назад к списку</a></li>
+                    <li><a href="index.html">На главную</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <section class="card" style="border-left-color: var(--med-color);">
+                <h2 class="dept-med">Общий медицинский протокол</h2>
+                <ul>
+                    <li><strong>Приоритет:</strong> Врачи должны оказывать помощь в порядке критичности состояния пациента.</li>
+                    <li><strong>Сенсоры:</strong> Экипаж без включенных сенсоров имеет низший приоритет на поиск при разгерметизации.</li>
+                    <li><strong>Химия:</strong> Химик обязан производить базовые медикаменты (эпинефрин, бикаридин) до начала личных экспериментов.</li>
+                </ul>
+            </section>
+
+            <section class="card" style="border-left-color: var(--med-color);">
+                <h2 class="dept-med">Генетика и Клонирование</h2>
+                <ul>
+                    <li><strong>DNR:</strong> Если в ПДА или записях указан отказ от клонирования, реанимация запрещена.</li>
+                    <li><strong>Мутации:</strong> Запрещено тестировать опасные мутации на экипаже без их явного согласия.</li>
+                </ul>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
