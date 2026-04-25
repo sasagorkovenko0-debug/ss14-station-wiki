@@ -80,7 +80,72 @@
                     </div>
                 </a>
             </div>
+<h2 class="section-title">Уровни угроз</h2>
+<div class="threat-container">
+    <details class="threat-item green">
+        <summary class="threat-header">
+            <div class="threat-status">
+                <span class="status-indicator"></span>
+                <span class="status-name">Уровень угрозы: Зеленый</span>
+            </div>
+            <span class="threat-desc-short">Все чисто; нет угроз на борту / возле станции</span>
+            <div class="collapse-icon"></div>
+        </summary>
+        
+        <div class="threat-content">
+            <div class="announcement-box">
+                <p class="quote">«Внимание! Уровень угрозы станции теперь зелёный! Можно безопасно возвращаться на свои рабочие места.»</p>
+                <div class="audio-control">
+                    <span>Объявление:</span>
+                    <button class="play-btn" onclick="playThreatAudio('green')">
+                        <span class="play-icon">▶</span> Прослушать
+                    </button>
+                    <audio id="audio-green" src="green.mp3"></audio>
+                </div>
+            </div>
+            
+            <div class="threat-info-grid">
+                <div class="info-block">
+                    <h4>Первоочерёдно устанавливается</h4>
+                    <p>Капитаном, Главой Службы Безопасности, Главой Персонала.</p>
+                </div>
+                
+                <div class="info-block">
+                    <h4>Условия</h4>
+                    <ul>
+                        <li>Является основным кодом в начале каждой смены;</li>
+                        <li>Угроза и последствия были устранены, либо активность отсутствовала долгое время.</li>
+                    </ul>
+                </div>
+                
+                <div class="info-block">
+                    <h4>Нормы экипажа</h4>
+                    <ul>
+                        <li>Свободное передвижение по станции;</li>
+                        <li>Датчики костюмов — по желанию или согласно СРП;</li>
+                        <li>ID-карта / КПК обязательны к ношению;</li>
+                        <li>Приоритет бюрократии в работе отделов.</li>
+                    </ul>
+                </div>
+                
+                <div class="info-block">
+                    <h4>Незарегистрированные лица</h4>
+                    <p>Обязаны заявить о прибытии в общий канал или факсом. Обязуются следовать Корпоративному Закону NT под угрозой наказания.</p>
+                </div>
+            </div>
+        </div>
+    </details>
+</div>
 
+<script>
+    function playThreatAudio(id) {
+        const audio = document.getElementById('audio-' + id);
+        if (audio) {
+            audio.currentTime = 0;
+            audio.play();
+        }
+    }
+</script>
             <section class="card">
                 <p style="text-align: center; color: #8b949e; margin: 0;">
                     Нажмите на иконку отдела, чтобы перейти к детальному списку правил и протоколов.
