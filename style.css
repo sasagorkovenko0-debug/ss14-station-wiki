@@ -378,3 +378,25 @@ section, .card {
     background: #0070e0;
     box-shadow: 0 0 15px #58a6ff;
 }
+/* Цвета для Желтого кода */
+.threat-item.yellow { border-left: 5px solid #d29922; }
+.threat-item.yellow .status-indicator, 
+.threat-item.yellow .status-name { 
+    color: #e3b341; 
+}
+.yellow .status-indicator {
+    background-color: #e3b341;
+    box-shadow: 0 0 10px #e3b341;
+}
+.threat-item.yellow .announcement-box {
+    background: rgba(227, 179, 65, 0.1);
+    border-left: 4px solid #e3b341;
+}
+.threat-item.yellow .play-btn {
+    background: #d29922;
+    color: #0d1117; /* Темный текст для контраста на желтом */
+}
+.threat-item.yellow .play-btn:hover {
+    background: #f1b622;
+    box-shadow: 0 0 15px #e3b341;
+}
