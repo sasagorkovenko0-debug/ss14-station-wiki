@@ -3,22 +3,19 @@
    ========================================= */
 :root {
     --bg-color: #05070a;
-    --card-bg: rgba(22, 27, 34, 0.9);
-    --sidebar-bg: rgba(20, 25, 35, 0.95);
+    --card-bg: rgba(22, 27, 34, 0.6); /* Полупрозрачность для блюра */
+    --sidebar-bg: rgba(15, 18, 25, 0.9);
     --text-color: #c0c5ce;
     --accent-blue: #58a6ff;
-    --accent-red: #f85149;
-    --accent-green: #2ea043;
-    --accent-yellow: #d29922;
     
-    /* Цвета отделов */
-    --cmd-color: #ffd700;
-    --sec-color: #ff3333;
-    --eng-color: #ffa64d;
-    --med-color: #4da6ff;
-    --sci-color: #c6538c;
-    --cargo-color: #b38050;
-    --srv-color: #8cff66;
+    /* Сочные цвета отделов */
+    --cmd-color: #ffcc00;
+    --sec-color: #ff4444;
+    --eng-color: #ff8800;
+    --med-color: #00ccff;
+    --sci-color: #ff00ff;
+    --cargo-color: #bb8844;
+    --srv-color: #44ff44;
 }
 
 html, body {
@@ -107,6 +104,7 @@ header {
 
 .grid-card {
     background: var(--card-bg);
+    backdrop-filter: blur(8px);
     border: 1px solid #30363d;
     border-radius: 16px;
     padding: 40px 20px;
@@ -140,70 +138,100 @@ header {
 
 .dept-grid {
     display: grid;
-    /* ИСПОЛЬЗУЕМ auto-fill И ФИКСИРОВАННЫЙ РАЗМЕР 260px */
-    /* Это не дает карточкам растягиваться на всю ширину страницы */
     grid-template-columns: repeat(auto-fill, 260px); 
-    gap: 20px;
+    gap: 25px;
     width: 100%;
+    margin-bottom: 40px;
 }
 
 .dept-card {
-    background: #161b22;
-    border: 1px solid #30363d;
-    border-radius: 8px;
+    background: linear-gradient(145deg, rgba(30, 35, 45, 0.7), rgba(15, 18, 25, 0.8));
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
     text-decoration: none;
-    transition: all 0.2s ease;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    /* Цветная полоска строго снизу */
-    border-bottom: 4px solid var(--accent-blue);
-    border-top: none; 
-    height: 180px; /* Фиксированная высота для ровности плиток */
+    position: relative;
+    height: 190px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Свечение при наведении */
+.dept-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(circle at center, var(--glow-color), transparent 75%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 0;
 }
 
 .dept-card-inner {
-    padding: 20px;
+    padding: 25px;
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    z-index: 1;
+}
+
+.dept-icon { 
+    font-size: 3.5rem; 
+    filter: drop-shadow(0 0 8px rgba(0,0,0,0.5));
+    transition: transform 0.3s ease;
+    animation: floatingIcon 4s ease-in-out infinite;
 }
 
 .dept-name {
     color: #fff;
-    font-weight: 600;
-    font-size: 1.1rem;
-    margin-top: 15px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    margin-top: 18px;
     text-align: center;
-}
-
-.dept-icon { 
-    font-size: 3rem; 
-    line-height: 1;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
 }
 
 .dept-card:hover {
-    transform: translateY(-3px);
-    background: #1c2128;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+    transform: translateY(-8px) scale(1.02);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
 }
 
-/* Привязываем цвета отделов к нижней границе */
-.dept-card.cmd { border-bottom-color: var(--cmd-color); }
-.dept-card.sec { border-bottom-color: var(--sec-color); }
-.dept-card.med { border-bottom-color: var(--med-color); }
-.dept-card.sci { border-bottom-color: var(--sci-color); }
-.dept-card.eng { border-bottom-color: var(--eng-color); }
-.dept-card.cargo { border-bottom-color: var(--cargo-color); }
-.dept-card.srv { border-bottom-color: var(--srv-color); }
+.dept-card:hover::before {
+    opacity: 1;
+}
+
+.dept-card:hover .dept-icon {
+    transform: scale(1.1);
+}
+
+/* Цвета и свечение отделов */
+.dept-card.cmd { --glow-color: rgba(255, 204, 0, 0.15); border-bottom: 4px solid var(--cmd-color); }
+.dept-card.sec { --glow-color: rgba(255, 68, 68, 0.15); border-bottom: 4px solid var(--sec-color); }
+.dept-card.med { --glow-color: rgba(0, 204, 255, 0.15); border-bottom: 4px solid var(--med-color); }
+.dept-card.sci { --glow-color: rgba(255, 0, 255, 0.15); border-bottom: 4px solid var(--sci-color); }
+.dept-card.eng { --glow-color: rgba(255, 136, 0, 0.15); border-bottom: 4px solid var(--eng-color); }
+.dept-card.cargo { --glow-color: rgba(187, 136, 68, 0.15); border-bottom: 4px solid var(--cargo-color); }
+.dept-card.srv { --glow-color: rgba(68, 255, 68, 0.15); border-bottom: 4px solid var(--srv-color); }
+
+@keyframes floatingIcon {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+}
 
 /* =========================================
-   6. КАРТОЧКИ ТЕКСТА (ВНУТРИ СРП)
+   6. КАРТОЧКИ ТЕКСТА
    ========================================= */
 section, .card {
     background: var(--card-bg);
+    backdrop-filter: blur(10px);
     border: 1px solid #30363d;
     border-radius: 12px;
     padding: 30px;
@@ -211,10 +239,10 @@ section, .card {
     border-left: 5px solid var(--accent-blue);
 }
 
-.card-cmd { border-left-color: var(--cmd-color); color: var(--cmd-color); }
-.card-sec { border-left-color: var(--sec-color); color: var(--sec-color); }
-.card-med { border-left-color: var(--med-color); color: var(--med-color); }
-.card-eng { border-left-color: var(--eng-color); color: var(--eng-color); }
+.card-cmd { border-left-color: var(--cmd-color); }
+.card-sec { border-left-color: var(--sec-color); }
+.card-med { border-left-color: var(--med-color); }
+.card-eng { border-left-color: var(--eng-color); }
 
 .card ul { list-style: none; padding-left: 0; }
 .card li { position: relative; padding-left: 25px; margin-bottom: 12px; color: var(--text-color); }
