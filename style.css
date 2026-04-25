@@ -233,3 +233,47 @@ section, .card {
     font-size: 3.5rem;
     line-height: 1;
 }
+/* Сетка для СРП */
+.dept-nav {
+    display: grid;
+    /* Это заставит кнопки вставать в ряд по 3-4 штуки автоматически */
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); 
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.dept-btn {
+    background: var(--card-bg);
+    border: 1px solid #30363d;
+    padding: 30px 15px;
+    border-radius: 12px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.3s ease;
+    border-bottom: 4px solid transparent;
+}
+
+.dept-btn:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Привязка цветов к кнопкам через классы */
+.dept-btn.cmd { border-bottom-color: var(--cmd-color); }
+.dept-btn.sec { border-bottom-color: var(--sec-color); }
+.dept-btn.med { border-bottom-color: var(--med-color); }
+.dept-btn.eng { border-bottom-color: var(--eng-color); }
+.dept-btn.sci { border-bottom-color: var(--sci-color); }
+.dept-btn.cargo { border-bottom-color: var(--cargo-color); }
+.dept-btn.srv { border-bottom-color: var(--srv-color); }
+
+.dept-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    display: block;
+}
