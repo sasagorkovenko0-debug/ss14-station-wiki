@@ -186,3 +186,50 @@ section, .card {
     .sidebar { width: 100%; position: relative; top: 0; }
     .dept-nav { grid-template-columns: 1fr; }
 }
+/* СЕТКА КНОПОК ДЛЯ ГЛАВНОЙ СТРАНИЦЫ */
+.main-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.grid-card {
+    background: var(--card-bg);
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s ease;
+    min-height: 200px;
+}
+
+.grid-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent-blue);
+    box-shadow: 0 10px 30px rgba(88, 166, 255, 0.2);
+    background: rgba(88, 166, 255, 0.05);
+}
+
+.grid-card h3 {
+    margin: 15px 0 10px 0;
+    font-size: 1.5rem;
+    color: var(--accent-blue);
+}
+
+.grid-card p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #8b949e;
+}
+
+.card-icon {
+    font-size: 3.5rem;
+    line-height: 1;
+}
