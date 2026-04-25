@@ -400,3 +400,29 @@ section, .card {
     background: #f1b622;
     box-shadow: 0 0 15px #e3b341;
 }
+/* Цвета для Фиолетового кода */
+.threat-item.violet { border-left: 5px solid #a371f7; }
+.threat-item.violet .status-indicator, 
+.threat-item.violet .status-name { 
+    color: #a371f7; 
+}
+.violet .status-indicator {
+    background-color: #a371f7;
+    box-shadow: 0 0 10px #a371f7;
+}
+.threat-item.violet .announcement-box {
+    background: rgba(163, 113, 247, 0.1);
+    border-left: 4px solid #a371f7;
+}
+.threat-item.violet .play-btn {
+    background: #7d46e4;
+}
+.threat-item.violet .play-btn:hover {
+    background: #905cf2;
+    box-shadow: 0 0 15px #a371f7;
+}
+
+/* Особенность для фиолетового контента: акцент на запретах */
+.threat-item.violet b {
+    color: #f85149; /* Красный акцент для слова ЗАПРЕЩЕНА */
+}
