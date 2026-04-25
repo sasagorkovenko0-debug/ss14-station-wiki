@@ -128,19 +128,13 @@ header {
 .card-icon { font-size: 4rem; margin-bottom: 20px; }
 
 /* =========================================
-   5. СЕТКА ОТДЕЛОВ (СРП ПЛИТКИ)
+   5. СЕТКА ОТДЕЛОВ (СРП ПЛИТКИ КАК НА СКРИНЕ 2)
    ========================================= */
-.section-title {
-    border-bottom: 2px solid #30363d;
-    padding-bottom: 10px;
-    margin-bottom: 30px;
-    font-size: 1.8rem;
-    color: #fff;
-}
-
 .dept-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* auto-fill создаст много колонок, если есть место. 
+       280px — это оптимальная ширина плитки как на фото */
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
     gap: 20px;
     width: 100%;
 }
@@ -148,73 +142,44 @@ header {
 .dept-card {
     background: #161b22;
     border: 1px solid #30363d;
-    border-radius: 12px;
+    border-radius: 8px; /* Углы чуть острее, как на скрине */
     text-decoration: none;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
     overflow: hidden;
-    display: block;
-    border-top: 4px solid var(--accent-blue);
+    /* Полоска теперь снизу, как на втором скриншоте */
+    border-bottom: 4px solid var(--accent-blue);
+    border-top: none; 
 }
 
 .dept-card-inner {
-    padding: 40px 20px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    min-height: 180px;
+    justify-content: flex-end; /* Текст будет прижат к низу */
+    min-height: 150px;
 }
 
 .dept-name {
     color: #fff;
-    font-weight: 700;
-    font-size: 1.3rem;
+    font-weight: 600;
+    font-size: 1.1rem;
     margin-top: 15px;
+    text-align: center;
 }
 
-.dept-icon { font-size: 3.5rem; transition: 0.3s; }
-
-/* Ховеры и цвета отделов */
-.dept-card:hover {
-    transform: translateY(-5px);
-    background: #1c2128;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+.dept-icon { 
+    font-size: 3rem; 
+    margin-bottom: 5px;
 }
 
-.dept-card.cmd { border-top-color: var(--cmd-color); }
-.dept-card.sec { border-top-color: var(--sec-color); }
-.dept-card.med { border-top-color: var(--med-color); }
-.dept-card.sci { border-top-color: var(--sci-color); }
-.dept-card.eng { border-top-color: var(--eng-color); }
-.dept-card.cargo { border-top-color: var(--cargo-color); }
-.dept-card.srv { border-top-color: var(--srv-color); }
-
-/* =========================================
-   6. КАРТОЧКИ ТЕКСТА (ВНУТРИ ОТДЕЛОВ)
-   ========================================= */
-section, .card {
-    background: var(--card-bg);
-    border: 1px solid #30363d;
-    border-radius: 12px;
-    padding: 30px;
-    margin-bottom: 25px;
-    border-left: 5px solid var(--accent-blue);
-}
-
-.card-cmd { border-left-color: var(--cmd-color); color: var(--cmd-color); }
-.card-sec { border-left-color: var(--sec-color); color: var(--sec-color); }
-.card-med { border-left-color: var(--med-color); color: var(--med-color); }
-.card-eng { border-left-color: var(--eng-color); color: var(--eng-color); }
-
-.card ul { list-style: none; padding-left: 0; }
-.card li { position: relative; padding-left: 25px; margin-bottom: 12px; color: var(--text-color); }
-.card li::before { content: "●"; position: absolute; left: 0; color: inherit; }
-
-/* =========================================
-   7. АДАПТИВНОСТЬ
-   ========================================= */
-@media (max-width: 1000px) {
-    .container { flex-direction: column; }
-    .sidebar { width: 100%; position: relative; }
-    .dept-grid, .main-grid { grid-template-columns: 1fr; }
-}
+/* Привязываем цвета отделов к нижней границе */
+.dept-card.cmd { border-bottom-color: var(--cmd-color); }
+.dept-card.sec { border-bottom-color: var(--sec-color); }
+.dept-card.med { border-bottom-color: var(--med-color); }
+.dept-card.sci { border-bottom-color: var(--sci-color); }
+.dept-card.eng { border-bottom-color: var(--eng-color); }
+.dept-card.cargo { border-bottom-color: var(--cargo-color); }
+.dept-card.srv { border-bottom-color: var(--srv-color); }
