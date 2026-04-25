@@ -1,4 +1,6 @@
-/* ПЕРЕМЕННЫЕ */
+/* =========================================
+   ПЕРЕМЕННЫЕ И ОСНОВА
+   ========================================= */
 :root {
     --bg-color: #05070a;
     --card-bg: rgba(22, 27, 34, 0.9);
@@ -19,7 +21,6 @@
     --srv-color: #8cff66;
 }
 
-/* ОБЩИЕ СТИЛИ */
 html, body {
     margin: 0;
     padding: 0;
@@ -29,32 +30,38 @@ html, body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     overflow-x: hidden;
-    scroll-behavior: smooth; /* Плавный скролл */
+    scroll-behavior: smooth;
 }
 
 body {
-    /* Важно для работы Canvas-звезд: фон body должен быть прозрачным */
     background: transparent !important;
 }
 
-/* ХОЛСТ ДЛЯ ЖИВЫХ ЗВЕЗД */
+/* ФОН СО ЗВЕЗДАМИ */
 #starfield {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -2; /* Самый задний план */
+    z-index: -2;
     background: radial-gradient(circle at center, #1a1f2c 0%, #05070a 100%);
 }
 
-/* КРАСИВАЯ МИГАЮЩАЯ НАДПИСЬ (NovaCurse) */
+/* =========================================
+   ШАПКА И АНИМАЦИИ
+   ========================================= */
+header {
+    background: linear-gradient(180deg, rgba(17, 20, 36, 0.8) 0%, rgba(15, 17, 26, 0) 100%);
+    text-align: center;
+    padding: 1.5rem 1rem;
+}
+
 .glitch-text {
     font-size: 3rem;
     font-weight: 800;
     text-align: center;
     margin: 0;
-    padding-top: 1rem;
     animation: novaColor 10s infinite alternate ease-in-out, novaGlow 4s infinite alternate;
 }
 
@@ -71,14 +78,9 @@ body {
     to { text-shadow: 0 0 25px rgba(163, 113, 247, 0.7), 0 0 10px rgba(255, 77, 77, 0.4); }
 }
 
-/* ШАПКА */
-header {
-    background: linear-gradient(180deg, rgba(17, 20, 36, 0.8) 0%, rgba(15, 17, 26, 0) 100%);
-    text-align: center;
-    padding: 1.5rem 1rem;
-}
-
-/* КОНТЕЙНЕР */
+/* =========================================
+   МАКЕТ (GRID/FLEX)
+   ========================================= */
 .container {
     display: flex;
     max-width: 1400px;
@@ -88,7 +90,6 @@ header {
     align-items: flex-start;
 }
 
-/* НАВИГАЦИЯ (SIDEBAR) */
 .sidebar {
     width: 240px;
     background: var(--sidebar-bg);
@@ -96,32 +97,19 @@ header {
     border-radius: 12px;
     border: 1px solid #30363d;
     position: sticky;
-    top: 20px; 
+    top: 20px;
     z-index: 10;
     flex-shrink: 0;
 }
 
-.sidebar h3 {
-    color: #8b949e;
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-    border-bottom: 1px solid #30363d;
-    padding-bottom: 5px;
-}
-
-.sidebar ul { list-style: none; padding: 0; margin: 0; }
-.sidebar li { margin-bottom: 8px; }
-.sidebar a { color: var(--accent-blue); text-decoration: none; transition: 0.2s; }
-.sidebar a:hover { color: #fff; text-shadow: 0 0 8px var(--accent-blue); }
-
-/* ОСНОВНОЙ КОНТЕНТ */
 .main-content {
     flex: 1;
     min-width: 0;
 }
 
-/* КОНТЕЙНЕР ДЛЯ ИКОНОК-КНОПОК СРП */
+/* =========================================
+   НАВИГАЦИЯ ОТДЕЛОВ (ПЛИТКИ)
+   ========================================= */
 .dept-nav {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -140,13 +128,13 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: all 0.3s ease;
-    border-bottom: 4px solid transparent; /* Заготовка под цвет отдела */
+    transition: 0.3s ease;
+    border-bottom: 4px solid transparent;
 }
 
 .dept-icon { font-size: 2.5rem; margin-bottom: 10px; }
 
-/* Цветные полоски для кнопок */
+/* Цветные полоски кнопок */
 .dept-btn.cmd { border-bottom-color: var(--cmd-color); }
 .dept-btn.sec { border-bottom-color: var(--sec-color); }
 .dept-btn.med { border-bottom-color: var(--med-color); }
@@ -156,10 +144,11 @@ header {
     transform: translateY(-5px);
     background: rgba(88, 166, 255, 0.1);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    border-color: var(--accent-blue);
 }
 
-/* КАРТОЧКИ И СЕКЦИИ */
+/* =========================================
+   КАРТОЧКИ И ЦВЕТА ОТДЕЛОВ
+   ========================================= */
 section, .card {
     background: var(--card-bg);
     border: 1px solid #30363d;
@@ -167,24 +156,33 @@ section, .card {
     padding: 20px;
     margin-bottom: 20px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.5);
-    border-left: 4px solid transparent;
+    border-left: 5px solid transparent;
+    transition: 0.3s;
 }
 
-/* ЦВЕТА УГРОЗ И ОТДЕЛОВ (БОКОВЫЕ ПОЛОСКИ) */
-.threat-green, .green { border-left-color: var(--accent-green); }
-.threat-blue, .blue { border-left-color: var(--accent-blue); }
-.threat-yellow, .yellow { border-left-color: var(--accent-yellow); }
-.threat-red, .red { border-left-color: var(--accent-red); }
+/* Стили заголовков и рамок */
+.card-cmd, .dept-cmd { color: var(--cmd-color); border-left-color: var(--cmd-color); }
+.card-sec, .dept-sec { color: var(--sec-color); border-left-color: var(--sec-color); }
+.card-med, .dept-med { color: var(--med-color); border-left-color: var(--med-color); }
+.card-eng, .dept-eng { color: var(--eng-color); border-left-color: var(--eng-color); }
 
-/* Заголовки отделов внутри страниц */
-.dept-cmd { color: var(--cmd-color); }
-.dept-sec { color: var(--sec-color); }
-.dept-med { color: var(--med-color); }
-.dept-eng { color: var(--eng-color); }
+/* Списки с цветными точками */
+.card ul { list-style: none; padding-left: 0; }
+.card li { position: relative; padding-left: 25px; margin-bottom: 12px; }
 
-/* МОБИЛЬНАЯ АДАПТАЦИЯ */
+.card-cmd li::before { content: "●"; position: absolute; left: 0; color: var(--cmd-color); }
+.card-sec li::before { content: "●"; position: absolute; left: 0; color: var(--sec-color); }
+.card-med li::before { content: "●"; position: absolute; left: 0; color: var(--med-color); }
+.card-eng li::before { content: "●"; position: absolute; left: 0; color: var(--eng-color); }
+
+/* =========================================
+   ВСПОМОГАТЕЛЬНОЕ
+   ========================================= */
+.sidebar a { color: var(--accent-blue); text-decoration: none; transition: 0.2s; }
+.sidebar a:hover { color: #fff; text-shadow: 0 0 8px var(--accent-blue); }
+
 @media (max-width: 1000px) {
     .container { flex-direction: column; }
-    .sidebar { position: relative; width: 100%; top: 0; }
+    .sidebar { width: 100%; position: relative; top: 0; }
     .dept-nav { grid-template-columns: 1fr; }
 }
