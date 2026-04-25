@@ -1,5 +1,5 @@
 /* =========================================
-   ПЕРЕМЕННЫЕ И ОСНОВА
+   1. ПЕРЕМЕННЫЕ И ОСНОВА
    ========================================= */
 :root {
     --bg-color: #05070a;
@@ -31,55 +31,47 @@ html, body {
     line-height: 1.6;
     overflow-x: hidden;
     scroll-behavior: smooth;
+    background-color: var(--bg-color);
 }
 
-body {
-    background: transparent !important;
-}
+body { background: transparent !important; }
 
-/* ФОН СО ЗВЕЗДАМИ */
 #starfield {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
     z-index: -2;
     background: radial-gradient(circle at center, #1a1f2c 0%, #05070a 100%);
 }
 
 /* =========================================
-   ШАПКА И АНИМАЦИИ
+   2. ШАПКА И АНИМАЦИИ
    ========================================= */
 header {
     background: linear-gradient(180deg, rgba(17, 20, 36, 0.8) 0%, rgba(15, 17, 26, 0) 100%);
     text-align: center;
-    padding: 1.5rem 1rem;
+    padding: 3rem 1rem;
 }
 
 .glitch-text {
-    font-size: 3rem;
+    font-size: 3.5rem;
     font-weight: 800;
-    text-align: center;
-    margin: 0;
     animation: novaColor 10s infinite alternate ease-in-out, novaGlow 4s infinite alternate;
 }
 
 @keyframes novaColor {
     0% { color: #4facfe; }
-    25% { color: #00f2fe; }
     50% { color: #ff4d4d; }
-    75% { color: #ffd633; }
     100% { color: #a371f7; }
 }
 
 @keyframes novaGlow {
     from { text-shadow: 0 0 10px rgba(79, 172, 254, 0.4); }
-    to { text-shadow: 0 0 25px rgba(163, 113, 247, 0.7), 0 0 10px rgba(255, 77, 77, 0.4); }
+    to { text-shadow: 0 0 25px rgba(163, 113, 247, 0.7); }
 }
 
 /* =========================================
-   МАКЕТ (GRID/FLEX)
+   3. МАКЕТ КОНТЕЙНЕРА
    ========================================= */
 .container {
     display: flex;
@@ -99,208 +91,130 @@ header {
     position: sticky;
     top: 20px;
     z-index: 10;
-    flex-shrink: 0;
 }
 
-.main-content {
-    flex: 1;
-    min-width: 0;
-}
+.main-content { flex: 1; min-width: 0; }
 
 /* =========================================
-   НАВИГАЦИЯ ОТДЕЛОВ (ПЛИТКИ)
+   4. ГЛАВНАЯ СЕТКА (КНОПКИ ИНДЕКСА)
    ========================================= */
-.dept-nav {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
-    margin-bottom: 30px;
-}
-
-.dept-btn {
-    background: var(--card-bg);
-    border: 1px solid #30363d;
-    border-radius: 12px;
-    padding: 20px;
-    text-align: center;
-    text-decoration: none;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transition: 0.3s ease;
-    border-bottom: 4px solid transparent;
-}
-
-.dept-icon { font-size: 2.5rem; margin-bottom: 10px; }
-
-/* Цветные полоски кнопок */
-.dept-btn.cmd { border-bottom-color: var(--cmd-color); }
-.dept-btn.sec { border-bottom-color: var(--sec-color); }
-.dept-btn.med { border-bottom-color: var(--med-color); }
-.dept-btn.eng { border-bottom-color: var(--eng-color); }
-
-.dept-btn:hover {
-    transform: translateY(-5px);
-    background: rgba(88, 166, 255, 0.1);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-}
-
-/* =========================================
-   КАРТОЧКИ И ЦВЕТА ОТДЕЛОВ
-   ========================================= */
-section, .card {
-    background: var(--card-bg);
-    border: 1px solid #30363d;
-    border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
-    border-left: 5px solid transparent;
-    transition: 0.3s;
-}
-
-/* Стили заголовков и рамок */
-.card-cmd, .dept-cmd { color: var(--cmd-color); border-left-color: var(--cmd-color); }
-.card-sec, .dept-sec { color: var(--sec-color); border-left-color: var(--sec-color); }
-.card-med, .dept-med { color: var(--med-color); border-left-color: var(--med-color); }
-.card-eng, .dept-eng { color: var(--eng-color); border-left-color: var(--eng-color); }
-
-/* Списки с цветными точками */
-.card ul { list-style: none; padding-left: 0; }
-.card li { position: relative; padding-left: 25px; margin-bottom: 12px; }
-
-.card-cmd li::before { content: "●"; position: absolute; left: 0; color: var(--cmd-color); }
-.card-sec li::before { content: "●"; position: absolute; left: 0; color: var(--sec-color); }
-.card-med li::before { content: "●"; position: absolute; left: 0; color: var(--med-color); }
-.card-eng li::before { content: "●"; position: absolute; left: 0; color: var(--eng-color); }
-
-/* =========================================
-   ВСПОМОГАТЕЛЬНОЕ
-   ========================================= */
-.sidebar a { color: var(--accent-blue); text-decoration: none; transition: 0.2s; }
-.sidebar a:hover { color: #fff; text-shadow: 0 0 8px var(--accent-blue); }
-
-@media (max-width: 1000px) {
-    .container { flex-direction: column; }
-    .sidebar { width: 100%; position: relative; top: 0; }
-    .dept-nav { grid-template-columns: 1fr; }
-}
-/* СЕТКА КНОПОК ДЛЯ ГЛАВНОЙ СТРАНИЦЫ */
 .main-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
     padding: 20px 0;
 }
 
 .grid-card {
     background: var(--card-bg);
     border: 1px solid #30363d;
-    border-radius: 12px;
-    padding: 30px;
+    border-radius: 16px;
+    padding: 40px 20px;
     text-align: center;
     text-decoration: none;
     color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    transition: 0.3s ease;
-    min-height: 200px;
+    transition: all 0.3s ease;
 }
 
 .grid-card:hover {
     transform: translateY(-10px);
     border-color: var(--accent-blue);
     box-shadow: 0 10px 30px rgba(88, 166, 255, 0.2);
-    background: rgba(88, 166, 255, 0.05);
 }
 
-.grid-card h3 {
-    margin: 15px 0 10px 0;
-    font-size: 1.5rem;
-    color: var(--accent-blue);
-}
+.card-icon { font-size: 4rem; margin-bottom: 20px; }
 
-.grid-card p {
-    margin: 0;
-    font-size: 0.95rem;
-    color: #8b949e;
-}
-
-.card-icon {
-    font-size: 3.5rem;
-    line-height: 1;
-}
-/* Заголовок секции */
+/* =========================================
+   5. СЕТКА ОТДЕЛОВ (СРП ПЛИТКИ)
+   ========================================= */
 .section-title {
     border-bottom: 2px solid #30363d;
     padding-bottom: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     font-size: 1.8rem;
+    color: #fff;
 }
 
-/* Сетка: 3 колонки на десктопе */
 .dept-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Ровно 3 в линию */
-    gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
     width: 100%;
 }
 
-/* Сами карточки-плитки */
 .dept-card {
-    background: #161b22; /* Темный фон как на фото */
+    background: #161b22;
     border: 1px solid #30363d;
-    border-radius: 8px;
+    border-radius: 12px;
     text-decoration: none;
-    transition: all 0.2s ease;
+    transition: all 0.3s ease;
     overflow: hidden;
     display: block;
+    border-top: 4px solid var(--accent-blue);
 }
 
 .dept-card-inner {
-    padding: 20px;
+    padding: 40px 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 120px;
+    min-height: 180px;
 }
 
 .dept-name {
-    color: #58a6ff; /* Голубой текст по умолчанию */
-    font-weight: bold;
-    font-size: 1.1rem;
-    margin-top: 10px;
-    text-align: center;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.3rem;
+    margin-top: 15px;
 }
 
-/* Иконки (можешь потом заменить на картинки персонажей) */
-.dept-icon {
-    font-size: 2.5rem;
-    filter: drop-shadow(0 0 10px rgba(0,0,0,0.5));
-}
+.dept-icon { font-size: 3.5rem; transition: 0.3s; }
 
-/* Эффекты при наведении и цвета рамок */
+/* Ховеры и цвета отделов */
 .dept-card:hover {
-    transform: translateY(-3px);
+    transform: translateY(-5px);
     background: #1c2128;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.5);
 }
 
-.dept-card.cmd:hover { border-color: var(--cmd-color); }
-.dept-card.sec:hover { border-color: var(--sec-color); }
-.dept-card.med:hover { border-color: var(--med-color); }
-.dept-card.sci:hover { border-color: var(--sci-color); }
-.dept-card.eng:hover { border-color: var(--eng-color); }
-.dept-card.cargo:hover { border-color: var(--cargo-color); }
-.dept-card.srv:hover { border-color: var(--srv-color); }
+.dept-card.cmd { border-top-color: var(--cmd-color); }
+.dept-card.sec { border-top-color: var(--sec-color); }
+.dept-card.med { border-top-color: var(--med-color); }
+.dept-card.sci { border-top-color: var(--sci-color); }
+.dept-card.eng { border-top-color: var(--eng-color); }
+.dept-card.cargo { border-top-color: var(--cargo-color); }
+.dept-card.srv { border-top-color: var(--srv-color); }
 
-/* Адаптивность для мобилок (переход в 1 колонку) */
-@media (max-width: 768px) {
-    .dept-grid {
-        grid-template-columns: 1fr;
-    }
+/* =========================================
+   6. КАРТОЧКИ ТЕКСТА (ВНУТРИ ОТДЕЛОВ)
+   ========================================= */
+section, .card {
+    background: var(--card-bg);
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 25px;
+    border-left: 5px solid var(--accent-blue);
+}
+
+.card-cmd { border-left-color: var(--cmd-color); color: var(--cmd-color); }
+.card-sec { border-left-color: var(--sec-color); color: var(--sec-color); }
+.card-med { border-left-color: var(--med-color); color: var(--med-color); }
+.card-eng { border-left-color: var(--eng-color); color: var(--eng-color); }
+
+.card ul { list-style: none; padding-left: 0; }
+.card li { position: relative; padding-left: 25px; margin-bottom: 12px; color: var(--text-color); }
+.card li::before { content: "●"; position: absolute; left: 0; color: inherit; }
+
+/* =========================================
+   7. АДАПТИВНОСТЬ
+   ========================================= */
+@media (max-width: 1000px) {
+    .container { flex-direction: column; }
+    .sidebar { width: 100%; position: relative; }
+    .dept-grid, .main-grid { grid-template-columns: 1fr; }
 }
