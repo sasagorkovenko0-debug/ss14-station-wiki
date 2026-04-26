@@ -499,3 +499,47 @@ section, .card {
 .threat-item.sierra b {
     color: #4df0e1;
 }
+/* Уровень угрозы Дельта — Глубокий красный из скриншота */
+.threat-item.delta { 
+    border-left: 5px solid #5a1414; /* Темно-бордовый оттенок */
+    background: rgba(90, 20, 20, 0.1); 
+}
+
+.threat-item.delta .status-indicator, 
+.threat-item.delta .status-name { 
+    color: #cc3333; 
+}
+
+.delta .status-indicator {
+    background-color: #ff0000;
+    box-shadow: 0 0 15px #ff0000;
+}
+
+.threat-item.delta .announcement-box {
+    background: rgba(90, 20, 20, 0.3);
+    border: 1px solid rgba(255, 0, 0, 0.2);
+    border-left: 6px solid #ff0000;
+    animation: deltaPulse 2s infinite; /* Эффект тревоги */
+}
+
+.threat-item.delta .play-btn {
+    background: #5a1414;
+    color: #fff;
+    border: 1px solid #cc3333;
+}
+
+.threat-item.delta .play-btn:hover {
+    background: #cc3333;
+    box-shadow: 0 0 20px rgba(204, 51, 51, 0.5);
+}
+
+/* Красные акценты для критической информации */
+.threat-item.delta b {
+    color: #ff4444;
+}
+
+@keyframes deltaPulse {
+    0% { box-shadow: inset 0 0 0px rgba(255, 0, 0, 0); }
+    50% { box-shadow: inset 0 0 15px rgba(255, 0, 0, 0.2); }
+    100% { box-shadow: inset 0 0 0px rgba(255, 0, 0, 0); }
+}
