@@ -463,3 +463,39 @@ section, .card {
 .threat-item.gamma b {
     color: #db97ab;
 }
+/* Уровень угрозы Сьерра — Цвет со скриншота */
+.threat-item.sierra { 
+    border-left: 5px solid #28a99e; /* Бирюзовый оттенок из примера */
+    background: rgba(40, 169, 158, 0.05); 
+}
+
+.threat-item.sierra .status-indicator, 
+.threat-item.sierra .status-name { 
+    color: #38c8bc; 
+}
+
+.sierra .status-indicator {
+    background-color: #38c8bc;
+    box-shadow: 0 0 10px #28a99e;
+}
+
+.threat-item.sierra .announcement-box {
+    background: rgba(40, 169, 158, 0.1);
+    border: 1px solid rgba(40, 169, 158, 0.2);
+    border-left: 6px solid #28a99e;
+}
+
+.threat-item.sierra .play-btn {
+    background: #28a99e;
+    color: #fff;
+}
+
+.threat-item.sierra .play-btn:hover {
+    background: #38c8bc;
+    box-shadow: 0 0 15px rgba(56, 200, 188, 0.4);
+}
+
+/* Акценты для текста Сьерра-кода */
+.threat-item.sierra b {
+    color: #4df0e1;
+}
