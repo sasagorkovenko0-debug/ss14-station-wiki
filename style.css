@@ -426,45 +426,41 @@ section, .card {
 .threat-item.violet b {
     color: #f85149; /* Красный акцент для слова ЗАПРЕЩЕНА */
 }
-/* Цвета для Гамма кода */
+/* Цвета для Гамма кода (Розоватый/Маджента) */
 .threat-item.gamma { 
-    border-left: 5px solid #ff0000; 
-    background: rgba(255, 0, 0, 0.05); /* Легкий красный фон всей плитки */
+    border-left: 5px solid #ff00ff; 
+    background: rgba(255, 0, 255, 0.03); 
 }
 
 .threat-item.gamma .status-indicator, 
 .threat-item.gamma .status-name { 
-    color: #ff4444; 
+    color: #ff66ff; 
 }
 
 .gamma .status-indicator {
-    background-color: #ff4444;
-    box-shadow: 0 0 15px #ff4444;
-    animation: blinker 1s linear infinite; /* Мигающий индикатор */
+    background-color: #ff66ff;
+    box-shadow: 0 0 12px #ff00ff;
+    /* Анимация удалена, лампочка горит ровно */
 }
 
 .threat-item.gamma .announcement-box {
-    background: rgba(255, 0, 0, 0.15);
-    border: 1px solid rgba(255, 68, 68, 0.3);
-    border-left: 6px solid #ff4444;
+    background: rgba(255, 0, 255, 0.1);
+    border: 1px solid rgba(255, 102, 255, 0.2);
+    border-left: 6px solid #ff00ff;
 }
 
 .threat-item.gamma .play-btn {
-    background: #cc0000;
+    background: #c700c7;
+    color: #fff;
 }
 
 .threat-item.gamma .play-btn:hover {
-    background: #ff0000;
-    box-shadow: 0 0 20px #ff4444;
+    background: #ff00ff;
+    box-shadow: 0 0 15px #ff66ff;
 }
 
-/* Анимация мигания для критической угрозы */
-@keyframes blinker {
-    50% { opacity: 0.3; }
-}
-
-/* Красный акцент для критических предупреждений */
+/* Розоватый акцент для текста в Гамма-коде */
 .threat-item.gamma b {
-    color: #ff4444;
-    text-shadow: 0 0 5px rgba(255, 68, 68, 0.5);
+    color: #ff66ff;
+    text-shadow: 0 0 5px rgba(255, 102, 255, 0.3);
 }
