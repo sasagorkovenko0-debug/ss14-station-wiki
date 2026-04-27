@@ -1,211 +1,218 @@
 /* =========================================
-   1. ПЕРЕМЕННЫЕ И ОСНОВА
-   ========================================= */
+   1. ПЕРЕМЕННЫЕ И ОСНОВА
+   ========================================= */
 :root {
-    --bg-color: #05070a;
-    --card-bg: rgba(22, 27, 34, 0.6); /* Полупрозрачность для блюра */
-    --sidebar-bg: rgba(15, 18, 25, 0.9);
-    --text-color: #c0c5ce;
-    --accent-blue: #58a6ff;
-    
-    /* Сочные цвета отделов */
-    --cmd-color: #ffcc00;
-    --sec-color: #ff4444;
-    --eng-color: #ff8800;
-    --med-color: #00ccff;
-    --sci-color: #ff00ff;
-    --cargo-color: #bb8844;
-    --srv-color: #44ff44;
+    --bg-color: #05070a;
+    --card-bg: rgba(22, 27, 34, 0.6); /* Полупрозрачность для блюра */
+    --sidebar-bg: rgba(15, 18, 25, 0.9);
+    --text-color: #c0c5ce;
+    --accent-blue: #58a6ff;
+    
+    /* Сочные цвета отделов */
+    --cmd-color: #ffcc00;
+    --sec-color: #ff4444;
+    --eng-color: #ff8800;
+    --med-color: #00ccff;
+    --sci-color: #ff00ff;
+    --cargo-color: #bb8844;
+    --srv-color: #44ff44;
 }
 
 html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    min-height: 100vh;
-    color: var(--text-color);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-    background-color: var(--bg-color);
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+    color: var(--text-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    background-color: var(--bg-color);
 }
 
 body { background: transparent !important; }
 
 #starfield {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    z-index: -2;
-    background: radial-gradient(circle at center, #1a1f2c 0%, #05070a 100%);
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: -2;
+    background: radial-gradient(circle at center, #1a1f2c 0%, #05070a 100%);
 }
 
 /* =========================================
-   2. ШАПКА И АНИМАЦИИ
-   ========================================= */
+   2. ШАПКА И АНИМАЦИИ
+   ========================================= */
 header {
-    background: linear-gradient(180deg, rgba(17, 20, 36, 0.8) 0%, rgba(15, 17, 26, 0) 100%);
-    text-align: center;
-    padding: 3rem 1rem;
+    background: linear-gradient(180deg, rgba(17, 20, 36, 0.8) 0%, rgba(15, 17, 26, 0) 100%);
+    text-align: center;
+    padding: 3rem 1rem;
 }
 
 .glitch-text {
-    font-size: 3.5rem;
-    font-weight: 800;
-    animation: novaColor 10s infinite alternate ease-in-out, novaGlow 4s infinite alternate;
+    font-size: 3.5rem;
+    font-weight: 800;
+    animation: novaColor 10s infinite alternate ease-in-out, novaGlow 4s infinite alternate;
 }
 
 @keyframes novaColor {
-    0% { color: #4facfe; }
-    50% { color: #ff4d4d; }
-    100% { color: #a371f7; }
+    0% { color: #4facfe; }
+    50% { color: #ff4d4d; }
+    100% { color: #a371f7; }
 }
 
 @keyframes novaGlow {
-    from { text-shadow: 0 0 10px rgba(79, 172, 254, 0.4); }
-    to { text-shadow: 0 0 25px rgba(163, 113, 247, 0.7); }
+    from { text-shadow: 0 0 10px rgba(79, 172, 254, 0.4); }
+    to { text-shadow: 0 0 25px rgba(163, 113, 247, 0.7); }
 }
 
 /* =========================================
-   3. МАКЕТ КОНТЕЙНЕРА
-   ========================================= */
+   3. МАКЕТ КОНТЕЙНЕРА
+   ========================================= */
 .container {
-    display: flex;
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 20px 40px 20px;
-    gap: 25px;
-    align-items: flex-start;
+    display: flex;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px 40px 20px;
+    gap: 25px;
+    align-items: flex-start;
 }
 
 .sidebar {
-    width: 240px;
-    background: var(--sidebar-bg);
-    padding: 20px;
-    border-radius: 12px;
-    border: 1px solid #30363d;
-    position: sticky;
-    top: 20px;
-    z-index: 10;
+    width: 240px;
+    background: var(--sidebar-bg);
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #30363d;
+    position: sticky;
+    top: 20px;
+    z-index: 10;
 }
 
 .main-content { flex: 1; min-width: 0; }
 
 /* =========================================
-   4. ГЛАВНАЯ СЕТКА (КНОПКИ ИНДЕКСА)
-   ========================================= */
+   4. ГЛАВНАЯ СЕТКА (КНОПКИ ИНДЕКСА)
+   ========================================= */
 .main-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 25px;
-    padding: 20px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    padding: 20px 0;
 }
 
 .grid-card {
-    background: var(--card-bg);
-    backdrop-filter: blur(8px);
-    border: 1px solid #30363d;
-    border-radius: 16px;
-    padding: 40px 20px;
-    text-align: center;
-    text-decoration: none;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transition: all 0.3s ease;
+    background: var(--card-bg);
+    backdrop-filter: blur(8px);
+    border: 1px solid #30363d;
+    border-radius: 16px;
+    padding: 40px 20px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.3s ease;
 }
 
 .grid-card:hover {
-    transform: translateY(-10px);
-    border-color: var(--accent-blue);
-    box-shadow: 0 10px 30px rgba(88, 166, 255, 0.2);
+    transform: translateY(-10px);
+    border-color: var(--accent-blue);
+    box-shadow: 0 10px 30px rgba(88, 166, 255, 0.2);
 }
 
 .card-icon { font-size: 4rem; margin-bottom: 20px; }
 
 /* =========================================
-   5. СЕТКА ОТДЕЛОВ (СРП ПЛИТКИ)
-   ========================================= */
+   5. СЕТКА ОТДЕЛОВ (СРП ПЛИТКИ)
+   ========================================= */
 .section-title {
-    border-bottom: 2px solid #30363d;
-    padding-bottom: 10px;
-    margin-bottom: 30px;
-    font-size: 1.8rem;
-    color: #fff;
+    border-bottom: 2px solid #30363d;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+    color: #fff;
 }
 
 .dept-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 260px); 
-    gap: 25px;
-    width: 100%;
-    margin-bottom: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 260px); 
+    gap: 25px;
+    width: 100%;
+    margin-bottom: 40px;
 }
 
 .dept-card {
-    background: linear-gradient(145deg, rgba(30, 35, 45, 0.7), rgba(15, 18, 25, 0.8));
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
-    text-decoration: none;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    position: relative;
-    height: 190px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(145deg, rgba(30, 35, 45, 0.7), rgba(15, 18, 25, 0.8));
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+    height: 190px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
+/* Свечение при наведении */
 .dept-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: radial-gradient(circle at center, var(--glow-color), transparent 75%);
-    opacity: 0;
-    transition: opacity 0.4s ease;
-    z-index: 0;
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(circle at center, var(--glow-color), transparent 75%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 0;
 }
 
 .dept-card-inner {
-    padding: 25px;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    z-index: 1;
+    padding: 25px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
 }
 
-.dept-icon { 
-    font-size: 3.5rem; 
-    filter: drop-shadow(0 0 8px rgba(0,0,0,0.5));
-    transition: transform 0.3s ease;
-    animation: floatingIcon 4s ease-in-out infinite;
+.dept-icon { 
+    font-size: 3.5rem; 
+    filter: drop-shadow(0 0 8px rgba(0,0,0,0.5));
+    transition: transform 0.3s ease;
+    animation: floatingIcon 4s ease-in-out infinite;
 }
 
 .dept-name {
-    color: #fff;
-    font-weight: 700;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 1.2px;
-    margin-top: 18px;
-    text-align: center;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    margin-top: 18px;
+    text-align: center;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
 }
 
 .dept-card:hover {
-    transform: translateY(-8px) scale(1.02);
-    border-color: rgba(255, 255, 255, 0.3);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    transform: translateY(-8px) scale(1.02);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
 }
 
-.dept-card:hover::before { opacity: 1; }
-.dept-card:hover .dept-icon { transform: scale(1.1); }
+.dept-card:hover::before {
+    opacity: 1;
+}
 
+.dept-card:hover .dept-icon {
+    transform: scale(1.1);
+}
+
+/* Цвета и свечение отделов */
 .dept-card.cmd { --glow-color: rgba(255, 204, 0, 0.15); border-bottom: 4px solid var(--cmd-color); }
 .dept-card.sec { --glow-color: rgba(255, 68, 68, 0.15); border-bottom: 4px solid var(--sec-color); }
 .dept-card.med { --glow-color: rgba(0, 204, 255, 0.15); border-bottom: 4px solid var(--med-color); }
@@ -215,78 +222,21 @@ header {
 .dept-card.srv { --glow-color: rgba(68, 255, 68, 0.15); border-bottom: 4px solid var(--srv-color); }
 
 @keyframes floatingIcon {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-6px); }
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
 }
 
 /* =========================================
-   6. РОЛИ И ПРОФЕССИИ (JOBS GRID)
-   ========================================= */
-.jobs-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-    gap: 20px;
-    justify-items: center;
-    padding: 25px;
-    background: rgba(15, 18, 25, 0.5);
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.job-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 130px;
-    transition: transform 0.2s ease;
-    cursor: default;
-}
-
-.job-card:hover {
-    transform: translateY(-5px);
-}
-
-.job-sprite {
-    width: 64px;
-    height: 64px;
-    image-rendering: pixelated; /* Сохраняет четкость спрайтов SS14 */
-    margin-bottom: 12px;
-    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
-}
-
-.job-info {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
-    text-align: center;
-    width: 100%;
-}
-
-.job-icon {
-    font-size: 14px;
-    flex-shrink: 0;
-}
-
-.job-name {
-    color: #4a90e2; /* Голубой цвет как в интерфейсе игры */
-    font-size: 0.85rem;
-    font-weight: 600;
-    line-height: 1.2;
-    text-shadow: 0 0 10px rgba(74, 144, 226, 0.2);
-}
-
-/* =========================================
-   7. КАРТОЧКИ ТЕКСТА
-   ========================================= */
+   6. КАРТОЧКИ ТЕКСТА
+   ========================================= */
 section, .card {
-    background: var(--card-bg);
-    backdrop-filter: blur(10px);
-    border: 1px solid #30363d;
-    border-radius: 12px;
-    padding: 30px;
-    margin-bottom: 25px;
-    border-left: 5px solid var(--accent-blue);
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 25px;
+    border-left: 5px solid var(--accent-blue);
 }
 
 .card-cmd { border-left-color: var(--cmd-color); }
@@ -299,79 +249,343 @@ section, .card {
 .card li::before { content: "●"; position: absolute; left: 0; color: inherit; }
 
 /* =========================================
-   8. УРОВНИ УГРОЗ
-   ========================================= */
+   7. АДАПТИВНОСТЬ
+   ========================================= */
+@media (max-width: 1000px) {
+    .container { flex-direction: column; }
+    .sidebar { width: 100%; position: relative; }
+    .dept-grid { 
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); 
+    }
+}
+/* Стили для уровней угроз */
 .threat-container {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 .threat-item {
-    background: rgba(22, 27, 34, 0.4);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
-    overflow: hidden;
-    transition: all 0.3s ease;
+    background: rgba(22, 27, 34, 0.4);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
 }
 
 .threat-header {
-    padding: 20px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    list-style: none;
-    position: relative;
+    padding: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    list-style: none;
+    position: relative;
 }
+
+.threat-header::-webkit-details-marker { display: none; }
 
 .status-indicator {
-    width: 12px; height: 12px;
-    border-radius: 50%;
-    margin-right: 15px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 15px;
+    display: inline-block;
 }
 
-.status-name { font-weight: 800; text-transform: uppercase; margin-right: 20px; }
+.green .status-indicator {
+    background-color: #2ea043;
+    box-shadow: 0 0 10px #2ea043;
+}
 
-/* Стили кодов */
-.green .status-indicator { background: #2ea043; box-shadow: 0 0 10px #2ea043; }
+.status-name {
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-right: 20px;
+}
+
 .green .status-name { color: #2ea043; }
 
-.blue { border-left: 5px solid #0056b3; }
-.blue .status-indicator { background: #58a6ff; box-shadow: 0 0 10px #58a6ff; }
-.blue .status-name { color: #58a6ff; }
+.threat-desc-short {
+    color: #8b949e;
+    font-size: 0.9rem;
+}
 
-.yellow { border-left: 5px solid #d29922; }
-.yellow .status-indicator { background: #e3b341; box-shadow: 0 0 10px #e3b341; }
-.yellow .status-name { color: #e3b341; }
+.threat-content {
+    padding: 0 25px 25px 50px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    animation: fadeIn 0.4s ease;
+}
 
-.violet { border-left: 5px solid #a371f7; }
-.violet .status-indicator { background: #a371f7; box-shadow: 0 0 10px #a371f7; }
-.violet .status-name { color: #a371f7; }
+.announcement-box {
+    background: rgba(46, 160, 67, 0.1);
+    border-left: 4px solid #2ea043;
+    padding: 15px;
+    border-radius: 4px;
+    margin: 20px 0;
+}
 
-.gamma { border-left: 5px solid #a35b71; background: rgba(163, 91, 113, 0.05); }
-.gamma .status-indicator { background: #c47c92; box-shadow: 0 0 10px rgba(163, 91, 113, 0.5); }
-.gamma .status-name { color: #c47c92; }
+.play-btn {
+    background: #2ea043;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.2s;
+}
 
-.sierra { border-left: 5px solid #28a99e; background: rgba(40, 169, 158, 0.05); }
-.sierra .status-indicator { background: #38c8bc; box-shadow: 0 0 10px #28a99e; }
-.sierra .status-name { color: #38c8bc; }
+.play-btn:hover { background: #3fb950; transform: scale(1.05); }
 
-.delta { border-left: 5px solid #5a1414; background: rgba(90, 20, 20, 0.1); }
-.delta .status-indicator { background: #ff0000; box-shadow: 0 0 15px #ff0000; }
-.delta .status-name { color: #cc3333; }
+.threat-info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 20px;
+}
 
-/* =========================================
-   9. АДАПТИВНОСТЬ
-   ========================================= */
-@media (max-width: 1000px) {
-    .container { flex-direction: column; }
-    .sidebar { width: 100%; position: relative; }
-    .dept-grid { 
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); 
-    }
-    .jobs-grid {
-        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-    }
+.info-block h4 {
+    color: #fff;
+    margin-bottom: 8px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 5px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+/* Цвета для Синего кода */
+.threat-item.blue { border-left: 5px solid #0056b3; }
+.threat-item.blue .status-indicator, 
+.threat-item.blue .status-name { 
+    color: #58a6ff; 
+}
+.blue .status-indicator {
+    background-color: #58a6ff;
+    box-shadow: 0 0 10px #58a6ff;
+}
+.threat-item.blue .announcement-box {
+    background: rgba(88, 166, 255, 0.1);
+    border-left: 4px solid #58a6ff;
+}
+.threat-item.blue .play-btn {
+    background: #0056b3;
+}
+.threat-item.blue .play-btn:hover {
+    background: #0070e0;
+    box-shadow: 0 0 15px #58a6ff;
+}
+/* Цвета для Желтого кода */
+.threat-item.yellow { border-left: 5px solid #d29922; }
+.threat-item.yellow .status-indicator, 
+.threat-item.yellow .status-name { 
+    color: #e3b341; 
+}
+.yellow .status-indicator {
+    background-color: #e3b341;
+    box-shadow: 0 0 10px #e3b341;
+}
+.threat-item.yellow .announcement-box {
+    background: rgba(227, 179, 65, 0.1);
+    border-left: 4px solid #e3b341;
+}
+.threat-item.yellow .play-btn {
+    background: #d29922;
+    color: #0d1117; /* Темный текст для контраста на желтом */
+}
+.threat-item.yellow .play-btn:hover {
+    background: #f1b622;
+    box-shadow: 0 0 15px #e3b341;
+}
+/* Цвета для Фиолетового кода */
+.threat-item.violet { border-left: 5px solid #a371f7; }
+.threat-item.violet .status-indicator, 
+.threat-item.violet .status-name { 
+    color: #a371f7; 
+}
+.violet .status-indicator {
+    background-color: #a371f7;
+    box-shadow: 0 0 10px #a371f7;
+}
+.threat-item.violet .announcement-box {
+    background: rgba(163, 113, 247, 0.1);
+    border-left: 4px solid #a371f7;
+}
+.threat-item.violet .play-btn {
+    background: #7d46e4;
+}
+.threat-item.violet .play-btn:hover {
+    background: #905cf2;
+    box-shadow: 0 0 15px #a371f7;
+}
+
+/* Особенность для фиолетового контента: акцент на запретах */
+.threat-item.violet b {
+    color: #f85149; /* Красный акцент для слова ЗАПРЕЩЕНА */
+}
+/* Уровень угрозы Гамма — в цвет скриншота */
+.threat-item.gamma { 
+    border-left: 5px solid #a35b71; /* Тот самый розовато-бордовый цвет */
+    background: rgba(163, 91, 113, 0.05); 
+}
+
+.threat-item.gamma .status-indicator, 
+.threat-item.gamma .status-name { 
+    color: #c47c92; 
+}
+
+.gamma .status-indicator {
+    background-color: #c47c92;
+    box-shadow: 0 0 10px rgba(163, 91, 113, 0.5);
+    /* Анимация мигания полностью удалена */
+}
+
+.threat-item.gamma .announcement-box {
+    background: rgba(163, 91, 113, 0.15);
+    border: 1px solid rgba(163, 91, 113, 0.3);
+    border-left: 6px solid #a35b71;
+}
+
+.threat-item.gamma .play-btn {
+    background: #a35b71;
+    color: #fff;
+}
+
+.threat-item.gamma .play-btn:hover {
+    background: #c47c92;
+    box-shadow: 0 0 15px rgba(196, 124, 146, 0.4);
+}
+
+/* Цвет важных акцентов внутри текста */
+.threat-item.gamma b {
+    color: #db97ab;
+}
+/* Уровень угрозы Сьерра — Цвет со скриншота */
+.threat-item.sierra { 
+    border-left: 5px solid #28a99e; /* Бирюзовый оттенок из примера */
+    background: rgba(40, 169, 158, 0.05); 
+}
+
+.threat-item.sierra .status-indicator, 
+.threat-item.sierra .status-name { 
+    color: #38c8bc; 
+}
+
+.sierra .status-indicator {
+    background-color: #38c8bc;
+    box-shadow: 0 0 10px #28a99e;
+}
+
+.threat-item.sierra .announcement-box {
+    background: rgba(40, 169, 158, 0.1);
+    border: 1px solid rgba(40, 169, 158, 0.2);
+    border-left: 6px solid #28a99e;
+}
+
+.threat-item.sierra .play-btn {
+    background: #28a99e;
+    color: #fff;
+}
+
+.threat-item.sierra .play-btn:hover {
+    background: #38c8bc;
+    box-shadow: 0 0 15px rgba(56, 200, 188, 0.4);
+}
+
+/* Акценты для текста Сьерра-кода */
+.threat-item.sierra b {
+    color: #4df0e1;
+}
+/* Уровень угрозы Дельта — Глубокий красный из скриншота */
+.threat-item.delta { 
+    border-left: 5px solid #5a1414; /* Темно-бордовый оттенок */
+    background: rgba(90, 20, 20, 0.1); 
+}
+
+.threat-item.delta .status-indicator, 
+.threat-item.delta .status-name { 
+    color: #cc3333; 
+}
+
+.delta .status-indicator {
+    background-color: #ff0000;
+    box-shadow: 0 0 15px #ff0000;
+}
+
+.threat-item.delta .announcement-box {
+    background: rgba(90, 20, 20, 0.3);
+    border: 1px solid rgba(255, 0, 0, 0.2);
+    border-left: 6px solid #ff0000;
+    animation: deltaPulse 2s infinite; /* Эффект тревоги */
+}
+
+.threat-item.delta .play-btn {
+    background: #5a1414;
+    color: #fff;
+    border: 1px solid #cc3333;
+}
+
+.threat-item.delta .play-btn:hover {
+    background: #cc3333;
+    box-shadow: 0 0 20px rgba(204, 51, 51, 0.5);
+}
+
+/* Красные акценты для критической информации */
+.threat-item.delta b {
+    color: #ff4444;
+}
+
+@keyframes deltaPulse {
+    0% { box-shadow: inset 0 0 0px rgba(255, 0, 0, 0); }
+    50% { box-shadow: inset 0 0 15px rgba(255, 0, 0, 0.2); }
+    100% { box-shadow: inset 0 0 0px rgba(255, 0, 0, 0); }
+}
+/* Контейнер для сетки профессий */
+.jobs-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(20, 20, 25, 0.8);
+    border-radius: 10px;
+}
+
+/* Карточка отдельной роли */
+.job-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 150px;
+    transition: transform 0.2s;
+}
+
+.job-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Спрайт персонажа */
+.job-sprite {
+    width: 64px; /* Размер пиксель-арта */
+    height: auto;
+    image-rendering: pixelated; /* Сохраняет четкость пикселей */
+    margin-bottom: 10px;
+}
+
+/* Блок с иконкой и текстом */
+.job-info {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.9rem;
+    color: #4a90e2; /* Голубой цвет текста как на скрине */
+    text-align: center;
+}
+
+.job-icon {
+    width: 16px;
+    height: 16px;
 }
