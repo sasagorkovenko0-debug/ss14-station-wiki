@@ -1,267 +1,951 @@
 <!DOCTYPE html>
+
 <html lang="ru">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>СРП Отделов | NovaCurse</title>
+
     <link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
+
     <canvas id="starfield"></canvas>
+
     
+
     <header>
+
         <h1 class="glitch-text">Стандартные Рабочие Процедуры</h1>
+
         <p>Выберите департамент для ознакомления с протоколами</p>
+
     </header>
 
+
+
     <div class="container">
+
         <aside class="sidebar">
+
             <div class="menu-section">
+
                 <h3>Навигация</h3>
+
                 <ul>
+
                     <li><a href="index.html">Главная</a></li>
+
                     <li><a href="laws.html">Коды и Закон</a></li>
+
                     <li><a href="jobs.html">Профессии</a></li>
+
                     <li><a href="srp.html">СРП Отделов</a></li>
+
                 </ul>
+
             </div>
+
         </aside>
 
+
+
         <main class="main-content">
+
             <h2 class="section-title">Ведомственные СРП</h2>
+
             
+
             <div class="dept-grid">
+
                 <a href="srp_cmd.html" class="dept-card cmd">
+
                     <div class="dept-card-inner">
+
                         <span class="dept-icon">👑</span>
+
                         <span class="dept-name">Командование</span>
+
                     </div>
+
                 </a>
+
+
 
                 <a href="srp_sec.html" class="dept-card sec">
+
                     <div class="dept-card-inner">
+
                         <span class="dept-icon">🛡️</span>
+
                         <span class="dept-name">Служба Безопасности</span>
+
                     </div>
+
                 </a>
+
+
 
                 <a href="srp_med.html" class="dept-card med">
+
                     <div class="dept-card-inner">
+
                         <span class="dept-icon">⚕️</span>
+
                         <span class="dept-name">Медицинский отдел</span>
+
                     </div>
+
                 </a>
+
+
 
                 <a href="srp_sci.html" class="dept-card sci">
+
                     <div class="dept-card-inner">
+
                         <span class="dept-icon">🧪</span>
+
                         <span class="dept-name">Научный отдел</span>
+
                     </div>
+
                 </a>
 
-                <a href="srp_cargo.html" class="dept-card cargo">
-                    <div class="dept-card-inner">
-                        <span class="dept-icon">📦</span>
-                        <span class="dept-name">Снабжение</span>
-                    </div>
-                </a>
+
 
                 <a href="srp_eng.html" class="dept-card eng">
+
                     <div class="dept-card-inner">
+
                         <span class="dept-icon">🔧</span>
+
                         <span class="dept-name">Инженерный отдел</span>
+
                     </div>
+
                 </a>
+
+
+
+                <a href="srp_cargo.html" class="dept-card cargo">
+
+                    <div class="dept-card-inner">
+
+                        <span class="dept-icon">📦</span>
+
+                        <span class="dept-name">Снабжение</span>
+
+                    </div>
+
+                </a>
+
+
 
                 <a href="srp_srv.html" class="dept-card srv">
+
                     <div class="dept-card-inner">
+
                         <span class="dept-icon">🍔</span>
+
                         <span class="dept-name">Сервис</span>
+
                     </div>
+
                 </a>
+
             </div>
 
-            <h2 class="section-title">Уровни угроз</h2>
-            <div class="threat-container">
-                <details class="threat-item green">
-                    <summary class="threat-header">
-                        <div class="threat-status">
-                            <span class="status-indicator"></span>
-                            <span class="status-name">Уровень угрозы: Зеленый</span>
-                        </div>
-                        <span class="threat-desc-short">Все чисто; нет угроз на борту / возле станции</span>
-                        <div class="collapse-icon"></div>
-                    </summary>
-                    <div class="threat-content">
-                        <div class="announcement-box">
-                            <p class="quote">«Внимание! Уровень угрозы станции теперь зелёный! Можно безопасно возвращаться на свои рабочие места.»</p>
-                            <div class="audio-control">
-                                <span>Объявление:</span>
-                                <button class="play-btn" onclick="playThreatAudio('green')">▶ Прослушать</button>
-                                <audio id="audio-green" src="green.mp3"></audio>
-                            </div>
-                        </div>
-                        <div class="threat-info-grid">
-                            <div class="info-block">
-                                <h4>Устанавливается</h4>
-                                <p>Капитаном, ГСБ, ГП.</p>
-                            </div>
-                            <div class="info-block">
-                                <h4>Нормы экипажа</h4>
-                                <ul>
-                                    <li>Свободное передвижение;</li>
-                                    <li>Датчики — по желанию;</li>
-                                    <li>Бюрократия в приоритете.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </details>
+<h2 class="section-title">Уровни угроз</h2>
 
-                <details class="threat-item blue">
-                    <summary class="threat-header">
-                        <div class="threat-status">
-                            <span class="status-indicator"></span>
-                            <span class="status-name">Уровень угрозы: Синий</span>
-                        </div>
-                        <span class="threat-desc-short">Подозрение на угрозу / Фауна</span>
-                        <div class="collapse-icon"></div>
-                    </summary>
-                    <div class="threat-content">
-                        <div class="announcement-box">
-                            <p class="quote">«Внимание! Уровень угрозы станции теперь синий! На станции присутствует неизвестная угроза. Службе безопасности разрешено проводить выборочные обыски.»</p>
-                            <div class="audio-control">
-                                <span>Объявление:</span>
-                                <button class="play-btn" onclick="playThreatAudio('blue')">▶ Прослушать</button>
-                                <audio id="audio-blue" src="blue.mp3"></audio>
-                            </div>
-                        </div>
-                    </div>
-                </details>
+<div class="threat-container">
 
-                <details class="threat-item yellow">
-                    <summary class="threat-header">
-                        <div class="threat-status">
-                            <span class="status-indicator"></span>
-                            <span class="status-name">Уровень угрозы: Желтый</span>
-                        </div>
-                        <span class="threat-desc-short">Инженерная угроза</span>
-                        <div class="collapse-icon"></div>
-                    </summary>
-                    <div class="threat-content">
-                        <div class="announcement-box">
-                            <p class="quote">«Внимание! Уровень угрозы станции теперь желтый! На станции присутствует структурная или атмосферная угроза...»</p>
-                            <div class="audio-control">
-                                <span>Объявление:</span>
-                                <button class="play-btn" onclick="playThreatAudio('yellow')">▶ Прослушать</button>
-                                <audio id="audio-yellow" src="yellow.mp3"></audio>
-                            </div>
-                        </div>
-                    </div>
-                </details>
+    <details class="threat-item green">
 
-                <details class="threat-item violet">
-                    <summary class="threat-header">
-                        <div class="threat-status">
-                            <span class="status-indicator"></span>
-                            <span class="status-name">Уровень угрозы: Фиолетовый</span>
-                        </div>
-                        <span class="threat-desc-short">Биоугроза / Карантин</span>
-                        <div class="collapse-icon"></div>
-                    </summary>
-                    <div class="threat-content">
-                        <div class="announcement-box">
-                            <p class="quote">«Внимание! Уровень угрозы станции теперь фиолетовый! На станции присутствует угроза вируса...»</p>
-                            <div class="audio-control">
-                                <span>Объявление:</span>
-                                <button class="play-btn" onclick="playThreatAudio('violet')">▶ Прослушать</button>
-                                <audio id="audio-violet" src="violet.mp3"></audio>
-                            </div>
-                        </div>
-                    </div>
-                </details>
+        <summary class="threat-header">
 
-                <details class="threat-item gamma">
-                    <summary class="threat-header">
-                        <div class="threat-status">
-                            <span class="status-indicator"></span>
-                            <span class="status-name">Уровень угрозы: Гамма</span>
-                        </div>
-                        <span class="threat-desc-short">Военное положение</span>
-                        <div class="collapse-icon"></div>
-                    </summary>
-                    <div class="threat-content">
-                        <div class="announcement-box">
-                            <p class="quote">«Центральное Командование объявило на станции уровень угрозы "Гамма"...»</p>
-                            <div class="audio-control">
-                                <span>Объявление:</span>
-                                <button class="play-btn" onclick="playThreatAudio('gamma')">☢ Прослушать</button>
-                                <audio id="audio-gamma" src="gamma.mp3"></audio>
-                            </div>
-                        </div>
-                    </div>
-                </details>
+            <div class="threat-status">
 
-                <details class="threat-item sierra">
-                    <summary class="threat-header">
-                        <div class="threat-status">
-                            <span class="status-indicator"></span>
-                            <span class="status-name">Уровень угрозы: Сьерра</span>
-                        </div>
-                        <span class="threat-desc-short">Критическая биоугроза</span>
-                        <div class="collapse-icon"></div>
-                    </summary>
-                    <div class="threat-content">
-                        <div class="announcement-box">
-                            <p class="quote">«Центральное командование объявило на станции уровень угрозы "Сьерра"...»</p>
-                            <div class="audio-control">
-                                <span>Объявление:</span>
-                                <button class="play-btn" onclick="playThreatAudio('sierra')">☣ Прослушать</button>
-                                <audio id="audio-sierra" src="sierra.mp3"></audio>
-                            </div>
-                        </div>
-                    </div>
-                </details>
+                <span class="status-indicator"></span>
 
-                <details class="threat-item delta">
-                    <summary class="threat-header">
-                        <div class="threat-status">
-                            <span class="status-indicator"></span>
-                            <span class="status-name">Уровень угрозы: Дельта</span>
-                        </div>
-                        <span class="threat-desc-short">Самоуничтожение</span>
-                        <div class="collapse-icon"></div>
-                    </summary>
-                    <div class="threat-content">
-                        <div class="announcement-box">
-                            <p class="quote">«Внимание! Уровень угрозы станции теперь "Дельта"! Станция под угрозой уничтожения.»</p>
-                            <div class="audio-control">
-                                <span>Объявление:</span>
-                                <button class="play-btn" onclick="playThreatAudio('delta')">⚠ Прослушать</button>
-                                <audio id="audio-delta" src="delta.mp3"></audio>
-                            </div>
-                        </div>
-                    </div>
-                </details>
+                <span class="status-name">Уровень угрозы: Зеленый</span>
+
             </div>
 
-            <section class="card">
-                <p style="text-align: center; color: #8b949e; margin: 20px 0;">
-                    Нажмите на иконку отдела, чтобы перейти к детальному списку правил и протоколов.
-                </p>
-            </section>
-        </main>
+            <span class="threat-desc-short">Все чисто; нет угроз на борту / возле станции</span>
+
+            <div class="collapse-icon"></div>
+
+        </summary>
+
+        
+
+        <div class="threat-content">
+
+            <div class="announcement-box">
+
+                <p class="quote">«Внимание! Уровень угрозы станции теперь зелёный! Можно безопасно возвращаться на свои рабочие места.»</p>
+
+                <div class="audio-control">
+
+                    <span>Объявление:</span>
+
+                    <button class="play-btn" onclick="playThreatAudio('green')">
+
+                        <span class="play-icon">▶</span> Прослушать
+
+                    </button>
+
+                    <audio id="audio-green" src="green.mp3"></audio>
+
+                </div>
+
+            </div>
+
+            
+
+            <div class="threat-info-grid">
+
+                <div class="info-block">
+
+                    <h4>Первоочерёдно устанавливается</h4>
+
+                    <p>Капитаном, Главой Службы Безопасности, Главой Персонала.</p>
+
+                </div>
+
+                
+
+                <div class="info-block">
+
+                    <h4>Условия</h4>
+
+                    <ul>
+
+                        <li>Является основным кодом в начале каждой смены;</li>
+
+                        <li>Угроза и последствия были устранены, либо активность отсутствовала долгое время.</li>
+
+                    </ul>
+
+                </div>
+
+                
+
+                <div class="info-block">
+
+                    <h4>Нормы экипажа</h4>
+
+                    <ul>
+
+                        <li>Свободное передвижение по станции;</li>
+
+                        <li>Датчики костюмов — по желанию или согласно СРП;</li>
+
+                        <li>ID-карта / КПК обязательны к ношению;</li>
+
+                        <li>Приоритет бюрократии в работе отделов.</li>
+
+                    </ul>
+
+                </div>
+
+                
+
+                <div class="info-block">
+
+                    <h4>Незарегистрированные лица</h4>
+
+                    <p>Обязаны заявить о прибытии в общий канал или факсом. Обязуются следовать Корпоративному Закону NT под угрозой наказания.</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </details>
+
+</div>
+
+
+
+<script>
+
+    function playThreatAudio(id) {
+
+        const audio = document.getElementById('audio-' + id);
+
+        if (audio) {
+
+            audio.currentTime = 0;
+
+            audio.play();
+
+        }
+
+    }
+
+</script>
+
+            <details class="threat-item blue">
+
+    <summary class="threat-header">
+
+        <div class="threat-status">
+
+            <span class="status-indicator"></span>
+
+            <span class="status-name">Уровень угрозы: Синий</span>
+
+        </div>
+
+        <span class="threat-desc-short">Подозрение на угрозу / Агрессивная фауна</span>
+
+        <div class="collapse-icon"></div>
+
+    </summary>
+
+    
+
+    <div class="threat-content">
+
+        <div class="announcement-box">
+
+            <p class="quote">«Внимание! Уровень угрозы станции теперь синий! На станции присутствует неизвестная угроза. Службе безопасности разрешено проводить выборочные обыски. Членам экипажа рекомендуется выполнять указания, отдаваемые действующей властью.»</p>
+
+            <div class="audio-control">
+
+                <span>Объявление:</span>
+
+                <button class="play-btn" onclick="playThreatAudio('blue')">
+
+                    <span class="play-icon">▶</span> Прослушать
+
+                </button>
+
+                <audio id="audio-blue" src="blue.mp3"></audio>
+
+            </div>
+
+        </div>
+
+        
+
+        <div class="threat-info-grid">
+
+            <div class="info-block">
+
+                <h4>Первоочерёдно устанавливается</h4>
+
+                <p>Капитаном, Главой Службы Безопасности, Главой Персонала.</p>
+
+            </div>
+
+            
+
+            <div class="info-block">
+
+                <h4>Условия</h4>
+
+                <ul>
+
+                    <li>Подозрение на угрозу на борту или в ближнем космосе (признаки враждебной деятельности без ущерба);</li>
+
+                    <li>Обнаружена неразумная враждебная фауна (слаймы, пауки и т.п.).</li>
+
+                </ul>
+
+            </div>
+
+            
+
+            <div class="info-block">
+
+                <h4>Нормы экипажа</h4>
+
+                <ul>
+
+                    <li>Свободное передвижение по уровням доступа;</li>
+
+                    <li>Рекомендуется режим координат на датчиках костюмов;</li>
+
+                    <li>ID-карта и КПК обязательны и должны быть видны;</li>
+
+                    <li>Обязательный доклад о подозрительной активности в СБ;</li>
+
+                    <li>Бюрократия имеет пониженный приоритет.</li>
+
+                </ul>
+
+            </div>
+
+            
+
+            <div class="info-block">
+
+                <h4>Незарегистрированные лица</h4>
+
+                <p>Обязаны заявить о прибытии в общий канал или факсом. Обязуются следовать Корпоративному Закону NT под угрозой наказания.</p>
+
+            </div>
+
+        </div>
+
     </div>
 
-    <script>
-        function playThreatAudio(id) {
-            const audio = document.getElementById('audio-' + id);
-            if (audio) {
-                audio.currentTime = 0;
-                audio.play();
-            }
-        }
-    </script>
+</details>
+
+            <details class="threat-item yellow">
+
+    <summary class="threat-header">
+
+        <div class="threat-status">
+
+            <span class="status-indicator"></span>
+
+            <span class="status-name">Уровень угрозы: Желтый</span>
+
+        </div>
+
+        <span class="threat-desc-short">Атмосферная или структурная угроза</span>
+
+        <div class="collapse-icon"></div>
+
+    </summary>
+
+    
+
+    <div class="threat-content">
+
+        <div class="announcement-box">
+
+            <p class="quote">«Внимание! Уровень угрозы станции теперь желтый! На станции присутствует структурная или атмосферная угроза. Инженерно-техническому персоналу рекомендуется немедленно реагировать и предпринимать меры по обеспечению безопасности. Членам экипажа рекомендуется удалиться от угрозы и при необходимости оставаться на своих рабочих местах»</p>
+
+            <div class="audio-control">
+
+                <span>Объявление:</span>
+
+                <button class="play-btn" onclick="playThreatAudio('yellow')">
+
+                    <span class="play-icon">▶</span> Прослушать
+
+                </button>
+
+                <audio id="audio-yellow" src="yellow.mp3"></audio>
+
+            </div>
+
+        </div>
+
+        
+
+        <div class="threat-info-grid">
+
+            <div class="info-block">
+
+                <h4>Устанавливается</h4>
+
+                <p>Капитаном, Главой Персонала, Старшим Инженером.</p>
+
+            </div>
+
+            
+
+            <div class="info-block">
+
+                <h4>Доступы</h4>
+
+                <p>СИ и Атмтехи получают расширенный доступ ко всем шлюзам (кроме кабинетов Глав и Арсенала) через 30 секунд после введения кода.</p>
+
+            </div>
+
+            
+
+            <div class="info-block">
+
+                <h4>Инженерный отдел</h4>
+
+                <ul>
+
+                    <li>Немедленное следование к зоне повреждений для ремонта;</li>
+
+                    <li>СИ обязан контролировать работы и содействовать подчиненным;</li>
+
+                    <li>Экипаж должен быть оповещен о местах разгерметизаций/поломок.</li>
+
+                </ul>
+
+            </div>
+
+            
+
+            <div class="info-block">
+
+                <h4>Нормы экипажа</h4>
+
+                <ul>
+
+                    <li>Подчинение правомерным требованиям инженеров;</li>
+
+                    <li>Запрет на нахождение в зонах проведения тех. работ;</li>
+
+                    <li>СБ сохраняет привилегии Синего кода;</li>
+
+                    <li>Незарегистрированные лица: права согласно Синему коду.</li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</details>
+
+            <details class="threat-item violet">
+
+    <summary class="threat-header">
+
+        <div class="threat-status">
+
+            <span class="status-indicator"></span>
+
+            <span class="status-name">Уровень угрозы: Фиолетовый</span>
+
+        </div>
+
+        <span class="threat-desc-short">Биологическая угроза / Карантин</span>
+
+        <div class="collapse-icon"></div>
+
+    </summary>
+
+    
+
+    <div class="threat-content">
+
+        <div class="announcement-box">
+
+            <p class="quote">«Внимание! Уровень угрозы станции теперь фиолетовый! На станции присутствует угроза вируса. Медицинскому персоналу рекомендуется изолировать членов экипажа с любыми симптомами. Членам экипажа рекомендуется дистанцироваться друг от друга и соблюдать меры безопасности по предотвращению дальнейшего распространению вируса.»</p>
+
+            <div class="audio-control">
+
+                <span>Объявление:</span>
+
+                <button class="play-btn" onclick="playThreatAudio('violet')">
+
+                    <span class="play-icon">▶</span> Прослушать
+
+                </button>
+
+                <audio id="audio-violet" src="violet.mp3"></audio>
+
+            </div>
+
+        </div>
+
+        
+
+        <div class="threat-info-grid">
+
+            <div class="info-block">
+
+                <h4>Устанавливается</h4>
+
+                <p>Капитаном, Главой Персонала, Главным Врачом.</p>
+
+            </div>
+
+            
+
+            <div class="info-block">
+
+                <h4>Медицинский отдел</h4>
+
+                <ul>
+
+                    <li>Приоритет: устранение вируса (если нет критических пациентов);</li>
+
+                    <li>ГВ контролирует процесс и содействует вирусологам;</li>
+
+                    <li>Командование и СБ имеют приоритет в лечении;</li>
+
+                    <li>Обязательная изоляция зараженных в Вирусологии.</li>
+
+                </ul>
+
+            </div>
+
+            
+
+            <div class="info-block">
+
+                <h4>Нормы экипажа</h4>
+
+                <ul>
+
+                    <li>Датчики костюмов — строго в режим координат;</li>
+
+                    <li>При симптомах — немедленная явка в Медблок;</li>
+
+                    <li>Подчинение инструкциям медиков (карантин, эвакуация из зон);</li>
+
+                    <li>Стыковка любых шаттлов ПРИОСТАНОВЛЕНА.</li>
+
+                </ul>
+
+            </div>
+
+            
+
+            <div class="info-block">
+
+                <h4>Незарегистрированные лица</h4>
+
+                <p>Высадка на станцию <b>ЗАПРЕЩЕНА</b> для предотвращения распространения инфекции. Пребывание в секторе разрешено без стыковки.</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</details>
+
+            <details class="threat-item gamma">
+
+    <summary class="threat-header">
+
+        <div class="threat-status">
+
+            <span class="status-indicator"></span>
+
+            <span class="status-name">Уровень угрозы: Гамма</span>
+
+        </div>
+
+        <span class="threat-desc-short">Военное положение / Критическая угроза</span>
+
+        <div class="collapse-icon"></div>
+
+    </summary>
+
+    
+
+    <div class="threat-content">
+
+        <div class="announcement-box">
+
+            <p class="quote">«Центральное Командование объявило на станции уровень угрозы "Гамма". Служба безопасности должна постоянно иметь при себе оружие, гражданский персонал обязан немедленно обратиться к главам отделов для получения указаний к эвакуации.»</p>
+
+            <div class="audio-control">
+
+                <span>Объявление:</span>
+
+                <button class="play-btn" onclick="playThreatAudio('gamma')">
+
+                    <span class="play-icon">☢</span> Прослушать
+
+                </button>
+
+                <audio id="audio-gamma" src="gamma.mp3"></audio>
+
+            </div>
+
+        </div>
+
+        
+
+        <div class="threat-info-grid">
+
+            <div class="info-block">
+
+                <h4>Устанавливается</h4>
+
+                <p>Исключительно <b>Центральным Командованием</b>.</p>
+
+            </div>
+
+            
+
+            <div class="info-block">
+
+                <h4>Доступы</h4>
+
+                <p>Все сотрудники СБ получают <b>полный доступ</b> ко всем отсекам станции через <b>капитана</b>. </p>
+
+            </div>
+
+            
+
+            <div class="info-block">
+
+                <h4>Нормы экипажа</h4>
+
+                <ul>
+
+                    <li>Установлено <b>военное положение</b>;</li>
+
+                    <li>СБ вправе применять любые меры, включая летальное оружие;</li>
+
+                    <li>Экипаж обязан находиться в своих отделах;</li>
+
+                    <li>Датчики костюмов — строго в режим координат;</li>
+
+                    <li>Скорость работы важнее бюрократии.</li>
+
+                </ul>
+
+            </div>
+
+            
+
+            <div class="info-block">
+
+                <h4>Незарегистрированные лица</h4>
+
+                <p>Высадка на станцию <b>КАТЕГОРИЧЕСКИ ЗАПРЕЩЕНА</b>. Любая попытка стыковки может рассматриваться как враждебный акт.</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</details>
+
+            <details class="threat-item sierra">
+
+    <summary class="threat-header">
+
+        <div class="threat-status">
+
+            <span class="status-indicator"></span>
+
+            <span class="status-name">Уровень угрозы: Сьерра</span>
+
+        </div>
+
+        <span class="threat-desc-short">Биоугроза 4-го уровня / Изоляция</span>
+
+        <div class="collapse-icon"></div>
+
+    </summary>
+
+    
+
+    <div class="threat-content">
+
+        <div class="announcement-box">
+
+            <p class="quote">«Центральное командование объявило на станции уровень угрозы "Сьерра". Объявлен карантин, полная изоляция всего экипажа станции! Все шаттлы должны немедленно пристыковаться к станции или будут сбиты. Служба безопасности должна постоянно иметь при себе оружие, гражданский персонал обязан немедленно пройти в свои отделы. Службе безопасности разрешено применение летальной силы за неподчинение.»</p>
+
+            <div class="audio-control">
+
+                <span>Объявление:</span>
+
+                <button class="play-btn" onclick="playThreatAudio('sierra')">
+
+                    <span class="play-icon">☣</span> Прослушать
+
+                </button>
+
+                <audio id="audio-sierra" src="sierra.mp3"></audio>
+
+            </div>
+
+        </div>
+
+        
+
+        <div class="threat-info-grid">
+
+            <div class="info-block">
+
+                <h4>Устанавливается</h4>
+
+                <p>Исключительно <b>Центральным Командованием</b>.</p>
+
+            </div>
+
+            
+
+            <div class="info-block">
+
+                <h4>Условия</h4>
+
+                <p>Критическая биоугроза: Ксеноморфы, Аргоциты, Зомби-вирус, Блоб, Некроморфы или Пауки ужаса.</p>
+
+            </div>
+
+            
+
+            <div class="info-block">
+
+                <h4>Служба Безопасности</h4>
+
+                <ul>
+
+                    <li>Разрешена выдача оружия экипажу (с одобрения Капитана/ГСБ);</li>
+
+                    <li>Уполномочены применять летальную силу для обеспечения порядка;</li>
+
+                    <li>Обязаны постоянно носить оружие при себе.</li>
+
+                </ul>
+
+            </div>
+
+            
+
+            <div class="info-block">
+
+                <h4>Нормы экипажа</h4>
+
+                <ul>
+
+                    <li><b>Полная изоляция:</b> запрещено покидать станцию;</li>
+
+                    <li>Экипаж обязан находиться в своих отделах;</li>
+
+                    <li>Датчики костюмов — строго в режим координат;</li>
+
+                    <li>Гости станции обязаны быть в баре, библиотеке или жилом секторе.</li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</details>
+
+            <details class="threat-item delta">
+
+    <summary class="threat-header">
+
+        <div class="threat-status">
+
+            <span class="status-indicator"></span>
+
+            <span class="status-name">Уровень угрозы: Дельта</span>
+
+        </div>
+
+        <span class="threat-desc-short">Запущен механизм самоуничтожения станции</span>
+
+        <div class="collapse-icon"></div>
+
+    </summary>
+
+    
+
+    <div class="threat-content">
+
+        <div class="announcement-box">
+
+            <p class="quote">«Внимание! Уровень угрозы станции теперь "Дельта"! Станция находится под угрозой неминуемого уничтожения. Членам экипажа рекомендуется слушать глав отделов для получения дополнительной информации.»</p>
+
+            <div class="audio-control">
+
+                <span>Объявление:</span>
+
+                <button class="play-btn" onclick="playThreatAudio('delta')">
+
+                    <span class="play-icon">⚠</span> Прослушать
+
+                </button>
+
+                <audio id="audio-delta" src="delta.mp3"></audio>
+
+            </div>
+
+        </div>
+
+        
+
+        <div class="threat-info-grid">
+
+            <div class="info-block">
+
+                <h4>Устанавливается</h4>
+
+                <p><b>Центральным Командованием</b> при запуске МСС.</p>
+
+            </div>
+
+            
+
+            <div class="info-block">
+
+                <h4>Если запуск НЕ санкционирован ЦК</h4>
+
+                <ul>
+
+                    <li><b>СБ:</b> Все силы на обезвреживание боеголовки;</li>
+
+                    <li><b>СБ:</b> Допуск к МСС только квалифицированных лиц;</li>
+
+                    <li><b>Экипаж:</b> Оказание любой помощи СБ;</li>
+
+                    <li><b>Запрет:</b> Неквалифицированным лицам не трогать МСС.</li>
+
+                </ul>
+
+            </div>
+
+            
+
+            <div class="info-block">
+
+                <h4>Если запуск санкционирован ЦК</h4>
+
+                <ul>
+
+                    <li><b>СБ:</b> Сохранение порядка, недопущение распространения угроз;</li>
+
+                    <li><b>СБ:</b> Разрешено применение <b>летального оружия</b> к любому, кто пытается обезвредить МСС;</li>
+
+                    <li><b>Экипаж:</b> Сохранять спокойствие и ждать финала.</li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</details>
+
+            <section class="card">
+
+                <p style="text-align: center; color: #8b949e; margin: 0;">
+
+                    Нажмите на иконку отдела, чтобы перейти к детальному списку правил и протоколов.
+
+                </p>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+
     <script src="script.js"></script>
+
 </body>
+
 </html>
